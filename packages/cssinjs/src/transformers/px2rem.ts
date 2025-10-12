@@ -4,6 +4,7 @@ import type { Transformer } from './interface'
 /**
  * respect https://github.com/cuth/postcss-pxtorem
  */
+// @ts-expect-error this package has no types
 import unitless from '@emotion/unitless'
 
 interface Options {

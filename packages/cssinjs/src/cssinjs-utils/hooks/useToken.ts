@@ -33,6 +33,6 @@ export interface UseTokenReturn<
 
 export type UseToken<
   CompTokenMap extends TokenMap,
-  DesignToken extends TokenType,
   AliasToken extends TokenType,
-> = () => UseTokenReturn<CompTokenMap, DesignToken, AliasToken>
+  DesignToken extends TokenType,
+> = () => UseTokenReturn<CompTokenMap, AliasToken, DesignToken>

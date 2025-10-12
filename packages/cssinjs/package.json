@@ -1,13 +1,28 @@
 {
   "name": "@antdv-next/cssinjs",
+  "type": "module",
   "version": "1.0.0",
-  "description": "",
+  "description": "cssinjs solution for ant-design-vue",
   "repository": {},
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./cssinjs-utils": {
+      "types": "./dist/cssinjs-utils.d.ts",
+      "import": "./dist/cssinjs-utils.js",
+      "default": "./dist/cssinjs-utils.js"
+    }
+  },
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "prepublish": "pnpm build",
+    "build": "tsdown"
   },
   "peerDependencies": {
     "vue": ">=3.2.0"

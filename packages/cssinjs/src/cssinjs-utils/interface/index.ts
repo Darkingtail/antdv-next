@@ -10,4 +10,8 @@ export type {
   TokenMapKey,
 } from './components'
 
-export type UseComponentStyleResult = [wrapSSR: (node: VNodeChild) => VNodeChild, hashId: string]
+export type UseComponentStyleResult = [
+  wrapSSR: (node: VNodeChild) => VNodeChild,
+  hashId: string,
+  cssVarCls?: string,
+]

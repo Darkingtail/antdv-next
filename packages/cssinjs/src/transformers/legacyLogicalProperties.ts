@@ -12,8 +12,8 @@ function splitValues(
   const importantCells = rawStyle.match(/(.*)(!important)/)
 
   const splitStyle = (importantCells ? importantCells[1] : rawStyle)
-    .trim()
-    .split(/\s+/)
+    ?.trim()
+    ?.split(/\s+/) ?? []
 
   // Combine styles split in brackets, like `calc(1px + 2px)`
   let temp: string[] = []
@@ -136,7 +136,7 @@ const transform: Transformer = {
 
     Object.keys(cssObj).forEach((key) => {
       const value = cssObj[key]
-      const matchValue = keyMap[key]
+      const matchValue = keyMap[key]!
 
       if (
         matchValue
@@ -152,13 +152,13 @@ const transform: Transformer = {
         }
         else if (matchValue.length === 1) {
           // Handle like `marginBlockStart` => `marginTop`
-          clone[matchValue[0]] = wrapImportantAndSkipCheck(values[0], important)
+          clone[matchValue[0]!] = wrapImportantAndSkipCheck(values[0]!, important)
         }
         else if (matchValue.length === 2) {
           // Handle like `marginBlock` => `marginTop` & `marginBottom`
           matchValue.forEach((matchKey, index) => {
             clone[matchKey] = wrapImportantAndSkipCheck(
-              values[index] ?? values[0],
+              values?.[index] ?? values[0]!,
               important,
             )
           })
@@ -167,7 +167,7 @@ const transform: Transformer = {
           // Handle like `inset` => `top` & `right` & `bottom` & `left`
           matchValue.forEach((matchKey, index) => {
             clone[matchKey] = wrapImportantAndSkipCheck(
-              values[index] ?? values[index - 2] ?? values[0],
+              (values?.[index] ?? values?.[index - 2] ?? values?.[0])!,
               important,
             )
           })
