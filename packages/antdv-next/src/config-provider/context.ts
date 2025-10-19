@@ -158,6 +158,7 @@ export interface ConfigComponentProps {
   flex?: FlexConfig
   divider?: ComponentStyleConfig
   alert?: AlertConfig
+  anchor?: ComponentStyleConfig
 }
 
 export interface ConfigConsumerProps extends ConfigComponentProps {

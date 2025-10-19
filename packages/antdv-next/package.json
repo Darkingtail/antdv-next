@@ -16,6 +16,7 @@
     "@v-c/util": "catalog:",
     "@vueuse/core": "catalog:",
     "defu": "catalog:",
-    "es-toolkit": "catalog:"
+    "es-toolkit": "catalog:",
+    "scroll-into-view-if-needed": "^3.1.0"
   }
 }

@@ -1,7 +1,7 @@
 import type { ComponentToken as WaveToken } from '../../_util/wave/style'
 import type { ComponentToken as AffixComponentToken } from '../../affix/style'
 import type { ComponentToken as AlertComponentToken } from '../../alert/style'
-// import type { ComponentToken as AnchorComponentToken } from '../../anchor/style';
+import type { ComponentToken as AnchorComponentToken } from '../../anchor/style'
 // import type { ComponentToken as AppComponentToken } from '../../app/style';
 // import type { ComponentToken as AvatarComponentToken } from '../../avatar/style';
 // import type { ComponentToken as BackTopComponentToken } from '../../back-top/style'
@@ -24,7 +24,7 @@ import type { ComponentToken as DividerComponentToken } from '../../divider/styl
 import type { ComponentToken as FlexComponentToken } from '../../flex/style'
 // import type { ComponentToken as FloatButtonComponentToken } from '../../float-button/style';
 // import type { ComponentToken as FormComponentToken } from '../../form/style';
-// import type { ComponentToken as GridComponentToken } from '../../grid/style';
+import type { ComponentToken as GridComponentToken } from '../../grid/style'
 // import type { ComponentToken as ImageComponentToken } from '../../image/style';
 // import type { ComponentToken as InputNumberComponentToken } from '../../input-number/style';
 // import type { ComponentToken as InputComponentToken } from '../../input/style';
@@ -68,7 +68,7 @@ import type { ComponentToken as SpaceComponentToken } from '../../space/style'
 export interface ComponentTokenMap {
   Affix?: AffixComponentToken
   Alert?: AlertComponentToken
-  // Anchor?: AnchorComponentToken;
+  Anchor?: AnchorComponentToken
   // Avatar?: AvatarComponentToken;
   // BackTop?: BackTopComponentToken
   // Badge?: BadgeComponentToken;
@@ -89,7 +89,7 @@ export interface ComponentTokenMap {
   Flex?: FlexComponentToken
   // FloatButton?: FloatButtonComponentToken;
   // Form?: FormComponentToken;
-  // Grid?: GridComponentToken;
+  Grid?: GridComponentToken
   // Image?: ImageComponentToken;
   // Input?: InputComponentToken;
   // InputNumber?: InputNumberComponentToken;
