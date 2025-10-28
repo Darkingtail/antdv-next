@@ -69,11 +69,14 @@ const Icon = defineComponent<IconComponentProps>(
         : undefined
 
       const [primaryColor, secondaryColor] = normalizeTwoToneColors(twoToneColor)
+      const restAttrs = { ...attrs }
+      delete restAttrs.class
       return (
         <span
           role="img"
           aria-label={icon.name}
           {...restProps}
+          {...restAttrs}
           tabindex={iconTabIndex}
           onClick={onClick}
           class={[classString, attrs.class]}
