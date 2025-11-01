@@ -1,24 +1,42 @@
 import type { App, CSSProperties } from 'vue'
+import type { SemanticClassNamesType, SemanticStylesType } from '../_util/hooks/useMergeSemantic.ts'
+import type { Orientation } from '../_util/hooks/useOrientation.ts'
 import type { ComponentBaseProps } from '../config-provider/context.ts'
 import type { SizeType } from '../config-provider/SizeContext.tsx'
 import { classNames } from '@v-c/util'
 import { filterEmpty } from '@v-c/util/dist/props-util'
 import { computed, defineComponent } from 'vue'
-import { useComponentConfig } from '../config-provider/context.ts'
+import { pureAttrs, useMergeSemantic, useToArr } from '../_util/hooks/useMergeSemantic.ts'
+import { useOrientation } from '../_util/hooks/useOrientation.ts'
+import { toPropsRefs } from '../_util/tools.ts'
+import { useBaseConfig, useComponentBaseConfig, useComponentConfig } from '../config-provider/context.ts'
 import { useSize } from '../config-provider/hooks/useSize.ts'
 import useStyle from './style'
 
-export interface DividerProps extends ComponentBaseProps {
-  type?: 'horizontal' | 'vertical'
-  /**
-   * @default center
-   */
-  orientation?:
-    | 'left'
+type SemanticName = 'root' | 'rail' | 'content'
+
+export type TitlePlacement
+  = | 'left'
     | 'right'
     | 'center'
     | 'start' // 👈 5.24.0+
     | 'end' // 👈 5.24.0+
+
+const titlePlacementList = ['left', 'right', 'center', 'start', 'end']
+
+export type DividerClassNamesType = SemanticClassNamesType<DividerProps, SemanticName>
+export type DividerStylesType = SemanticStylesType<DividerProps, SemanticName>
+
+export interface DividerProps extends ComponentBaseProps {
+  /**  @deprecated please use `orientation` */
+  type?: Orientation
+  /**
+   * @default center
+   */
+  orientation?: Orientation
+  vertical?: boolean
+  titlePlacement?: TitlePlacement
+  /** @deprecated please use `styles.content.margin` */
   orientationMargin?: string | number
   dashed?: boolean
   /**
@@ -28,6 +46,8 @@ export interface DividerProps extends ComponentBaseProps {
   variant?: 'dashed' | 'dotted' | 'solid'
   size?: SizeType
   plain?: boolean
+  classes?: DividerClassNamesType
+  styles?: DividerStylesType
 }
 
 const sizeClassNameMap: Record<string, string> = { small: 'sm', middle: 'md' }
@@ -41,25 +61,47 @@ const defaultProps = {
 const Divider = defineComponent<DividerProps>(
   (props = defaultProps, { slots, attrs }) => {
     const componentCtx = useComponentConfig('divider')
-    const prefixCls = computed(() => componentCtx.value.getPrefixCls('divider', props.prefixCls))
+    const { classes: contextClassNames, styles: contextStyles } = useComponentBaseConfig('divider')
+    const { prefixCls, direction } = useBaseConfig('divider', props)
     const [wrapCSSVar, hashId, cssVarCls] = useStyle(prefixCls)
     const sizeFullName = useSize(computed(() => props.size))
     const sizeCls = computed(() => sizeClassNameMap[sizeFullName.value!])
-    const mergedOrientation = computed(() => {
-      const orientation = props.orientation
-      const direction = componentCtx.value.direction
-      if (orientation === 'left') {
-        return direction === 'rtl' ? 'end' : 'start'
+    const { type, vertical, orientation, classes, styles } = toPropsRefs(props, 'orientation', 'vertical', 'type', 'classes', 'styles')
+    const validTitlePlacement = computed(() => titlePlacementList.includes(orientation.value || ''))
+    const mergedTitlePlacement = computed<'start' | 'end' | 'center'>(() => {
+      const placement = props?.titlePlacement ?? (validTitlePlacement.value ? (orientation.value as TitlePlacement) : 'center')
+      if (placement === 'left') {
+        return direction.value === 'rtl' ? 'end' : 'start'
       }
-      if (orientation === 'right') {
-        return direction === 'rtl' ? 'start' : 'end'
+      if (placement === 'right') {
+        return direction.value === 'rtl' ? 'start' : 'end'
       }
-      return orientation
+      return placement
     })
 
-    const hasMarginStart = computed(() => mergedOrientation.value === 'start' && props.orientationMargin != null)
-    const hasMarginEnd = computed(() => mergedOrientation.value === 'end' && props.orientationMargin != null)
+    const hasMarginStart = computed(() => mergedTitlePlacement.value === 'start' && props.orientationMargin != null)
+    const hasMarginEnd = computed(() => mergedTitlePlacement.value === 'end' && props.orientationMargin != null)
+    const [mergedOrientation, mergedVertical] = useOrientation(orientation, vertical, type)
 
+    // ========================= Semantic =========================
+    const mergedProps = computed(() => {
+      return {
+        ...props,
+        orientation: mergedOrientation.value,
+        titlePlacement: mergedTitlePlacement.value,
+        size: sizeFullName.value,
+      }
+    })
+
+    const [mergedClassNames, mergedStyles] = useMergeSemantic<DividerClassNamesType, DividerStylesType, DividerProps>(
+      useToArr(contextClassNames, classes),
+      useToArr(contextStyles, styles),
+      computed(() => {
+        return {
+          props: mergedProps.value,
+        }
+      }),
+    )
     const memoizedOrientationMargin = computed(() => {
       const orientationMargin = props.orientationMargin
       if (typeof orientationMargin === 'number') {
@@ -74,41 +116,71 @@ const Divider = defineComponent<DividerProps>(
       const {
         variant,
         dashed,
-        type,
         plain,
         rootClass,
       } = props
       const children = filterEmpty(slots?.default?.())
       const hasChildren = children.length > 0
+      const railCls = `${prefixCls.value}-rail`
       const classString = classNames(
         prefixCls.value,
         componentCtx.value.class,
         hashId.value,
         cssVarCls.value,
-        `${prefixCls.value}-${type}`,
+        `${prefixCls.value}-${mergedOrientation.value}`,
         {
           [`${prefixCls.value}-with-text`]: hasChildren,
-          [`${prefixCls.value}-with-text-${mergedOrientation.value}`]: hasChildren,
+          [`${prefixCls.value}-with-text-${mergedTitlePlacement.value}`]: hasChildren,
           [`${prefixCls.value}-dashed`]: !!dashed,
           [`${prefixCls.value}-${variant}`]: variant !== 'solid',
           [`${prefixCls.value}-plain`]: !!plain,
-          [`${prefixCls.value}-rtl`]: componentCtx.value?.direction === 'rtl',
+          [`${prefixCls.value}-rtl`]: direction.value === 'rtl',
           [`${prefixCls.value}-no-default-orientation-margin-start`]: hasMarginStart.value,
           [`${prefixCls.value}-no-default-orientation-margin-end`]: hasMarginEnd.value,
           [`${prefixCls.value}-${sizeCls.value}`]: !!sizeCls.value,
+          [railCls]: !hasChildren,
+          [mergedClassNames.value.rail as string]: mergedClassNames.value.rail && !hasChildren,
         },
         rootClass,
+        mergedClassNames.value.root,
       )
       const innerStyle: CSSProperties = {
         marginInlineStart: hasMarginStart.value ? memoizedOrientationMargin.value : undefined,
         marginInlineEnd: hasMarginEnd.value ? memoizedOrientationMargin.value : undefined,
       }
       return wrapCSSVar(
-        <div class={classString} style={componentCtx.value.style} {...attrs} role="separator">
-          {hasChildren && type !== 'vertical' && (
-            <span class={`${prefixCls.value}-inner-text`} style={innerStyle}>
-              {children}
-            </span>
+        <div
+          class={classString}
+          style={[
+            contextStyles.value,
+            mergedStyles.value.root,
+            hasChildren ? {} : mergedStyles.value.rail,
+            (attrs as any).style,
+          ]}
+          {...pureAttrs(attrs)}
+          role="separator"
+        >
+          {hasChildren && !mergedVertical.value && (
+            <>
+              <div
+                class={classNames(railCls, `${railCls}-start`, mergedClassNames.value.rail)}
+                style={mergedStyles.value.rail}
+              />
+              <span
+                class={classNames(
+                  `${prefixCls.value}-inner-text`,
+                  mergedClassNames.value.content,
+                )}
+                style={[innerStyle, mergedStyles.value.content]}
+              >
+                {children}
+              </span>
+
+              <div
+                class={classNames(railCls, `${railCls}-end`, mergedClassNames.value.rail)}
+                style={mergedStyles.value.rail}
+              />
+            </>
           )}
         </div>,
       )

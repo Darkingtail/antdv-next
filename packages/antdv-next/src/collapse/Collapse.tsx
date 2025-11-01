@@ -101,7 +101,6 @@ const Collapse = defineComponent<
       return {
         ...initCollapseMotion(rootPrefixCls),
         appear: false,
-        leaveActiveClass: `${prefixCls.value}-content-hidden`,
       }
     })
     return () => {

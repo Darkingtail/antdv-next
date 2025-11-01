@@ -13,7 +13,7 @@ catalog:
   "@types/node": ^24.7.1
   "@types/stylis": ^4.0.2
   "@types/testing-library__jest-dom": ^5.14.5
-  "@v-c/collapse": ^0.0.4
+  "@v-c/collapse": ^0.0.5
   "@v-c/color-picker": ^1.0.0
   "@v-c/mutate-observer": ^0.0.2
   "@v-c/qrcode": ^0.0.4

@@ -25,29 +25,29 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista
       probare, quae sunt a te dicta? Refert tamen, quo modo.
     </p>
-    <a-divider orientation="left">
+    <a-divider title-placement="left">
       Left Text
     </a-divider>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista
       probare, quae sunt a te dicta? Refert tamen, quo modo.
     </p>
-    <a-divider orientation="right">
+    <a-divider title-placement="right">
       Right Text
     </a-divider>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista
       probare, quae sunt a te dicta? Refert tamen, quo modo.
     </p>
-    <a-divider orientation="left" orientation-margin="0">
-      Left Text with 0 orientationMargin
+    <a-divider title-placement="left" :styles="{ content: { margin: '0px' } }">
+      Left Text margin with 0
     </a-divider>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista
       probare, quae sunt a te dicta? Refert tamen, quo modo.
     </p>
-    <a-divider orientation="right" :orientation-margin="50">
-      Right Text with 50px orientationMargin
+    <a-divider title-placement="right" :styles="{ content: { margin: '50px' } }">
+      Right Text margin with 50px
     </a-divider>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonne merninisti licere mihi ista

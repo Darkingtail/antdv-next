@@ -8,7 +8,7 @@
   <a-divider type="vertical" :style="{ height: '60px', borderColor: '#7cb305' }" dashed />
 
   <div :style="{ display: 'flex', flexDirection: 'column', height: '50px', boxShadow: '0 0 1px red' }">
-    <a-divider :style="{ background: 'rgba(0,255,0,0.05)' }" orientation="left">
+    <a-divider :style="{ background: 'rgba(0,255,0,0.05)' }" title-placement="left">
       Text
     </a-divider>
   </div>

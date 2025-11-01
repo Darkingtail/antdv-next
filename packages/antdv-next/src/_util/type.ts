@@ -2,6 +2,8 @@ import type { VNode, VNodeChild } from 'vue'
 
 export type AnyObject = Record<PropertyKey, any>
 
+export type EmptyObject = Record<never, never>
+
 export type RenderNodeFn<Args extends any[] = any[]> = (...args: Args) => VNodeChild
 
 export type VueNode<Args extends any[] = any[]> = RenderNodeFn<Args> | boolean | string | number | null | undefined | VNode
@@ -20,3 +22,31 @@ export interface EmptyEmit {
 export type SlotsDefineType<T extends Record<string, any> = Record<string, any>> = {
   default?: () => any
 } & T
+
+export type ValidChar
+  = | 'a'
+    | 'b'
+    | 'c'
+    | 'd'
+    | 'e'
+    | 'f'
+    | 'g'
+    | 'h'
+    | 'i'
+    | 'j'
+    | 'k'
+    | 'l'
+    | 'm'
+    | 'n'
+    | 'o'
+    | 'p'
+    | 'q'
+    | 'r'
+    | 's'
+    | 't'
+    | 'u'
+    | 'v'
+    | 'w'
+    | 'x'
+    | 'y'
+    | 'z'

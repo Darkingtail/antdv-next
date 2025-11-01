@@ -56,7 +56,6 @@ function initCollapseMotion(rootCls = defaultPrefixCls, appear = true): Transiti
   const name = `${rootCls}-motion-collapse`
   return {
     name,
-    duration: 500,
     appear,
     css: true,
     onBeforeEnter: el => getCollapsedHeight(el, name),

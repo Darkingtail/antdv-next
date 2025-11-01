@@ -338,3 +338,14 @@ export function useComponentConfig<T extends keyof ConfigComponentProps>(propNam
     } as ComponentReturnType<T>
   })
 }
+
+export function useComponentBaseConfig<T extends keyof ConfigComponentProps>(propName: T) {
+  const context = useConfig()
+  const propValue = computed(() => {
+    return context.value[propName] as { classes?: any, styles?: any } & ConfigConsumerProps[T]
+  })
+  return {
+    classes: computed(() => propValue.value?.classes || EMPTY_OBJECT),
+    styles: computed(() => propValue.value?.styles || EMPTY_OBJECT),
+  }
+}

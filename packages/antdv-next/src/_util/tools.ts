@@ -1,4 +1,6 @@
+import type { Ref } from 'vue'
 import { filterEmpty } from '@v-c/util/dist/props-util'
+import { toRef } from 'vue'
 
 export function getSlotPropFn(slots: any, props: any, key: string) {
   // TODO: 需要考虑 function slot
@@ -26,4 +28,12 @@ export function getSlotPropsFnRun(slots: any, props: any, key: string, isNull = 
     return isNull ? null : undefined
   }
   return fn
+}
+
+export function toPropsRefs<T extends Record<string, any>, K extends keyof T>(obj: T, ...args: K[]) {
+  const _res: Record<any, any> = {}
+  args.forEach((key) => {
+    _res[key] = toRef(obj, key)
+  })
+  return _res as { [key in K]-?: Ref<T[key]> }
 }

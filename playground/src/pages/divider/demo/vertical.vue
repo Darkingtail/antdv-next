@@ -1,7 +1,7 @@
 <template>
   Text
-  <a-divider type="vertical" />
+  <a-divider orientation="vertical" />
   <a href="#">Link</a>
-  <a-divider type="vertical" />
+  <a-divider orientation="vertical" />
   <a href="#">Link</a>
 </template>

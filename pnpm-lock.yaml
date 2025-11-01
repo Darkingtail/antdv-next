@@ -40,8 +40,8 @@ catalogs:
       specifier: ^5.14.5
       version: 5.14.9
     '@v-c/collapse':
-      specifier: ^0.0.4
-      version: 0.0.4
+      specifier: ^0.0.5
+      version: 0.0.5
     '@v-c/color-picker':
       specifier: ^1.0.0
       version: 1.0.0
@@ -218,7 +218,7 @@ importers:
         version: link:../icons
       '@v-c/collapse':
         specifier: 'catalog:'
-        version: 0.0.4(vue@3.5.22(typescript@5.9.3))
+        version: 0.0.5(vue@3.5.22(typescript@5.9.3))
       '@v-c/color-picker':
         specifier: 'catalog:'
         version: 1.0.0(vue@3.5.22(typescript@5.9.3))
@@ -1467,8 +1467,8 @@ packages:
     peerDependencies:
       vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0 || ^5.0.0-0 || ^6.0.0-0 || ^7.0.0-0
 
-  '@v-c/collapse@0.0.4':
-    resolution: {integrity: sha512-AmJVyZAhFtb8de9YNJnhr9r1MrIzxaK5W88ZXLC0MGWDUud+Vt9HdhgD4cu48W3GJrXqSXrcNZV38PgSFClrwA==}
+  '@v-c/collapse@0.0.5':
+    resolution: {integrity: sha512-PsPp+RCSQt/KQeFrjocNtVCos10q3sr96JRO+hjcopcmr/g5ZyKnXwzVPicSKuRxTueOic8tJTo5jyFWQv/UUQ==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -4833,7 +4833,7 @@ snapshots:
       unplugin-utils: 0.3.1
       vite: 7.1.12(@types/node@24.7.1)(jiti@2.6.1)(lightningcss@1.30.2)(tsx@4.20.6)(yaml@2.8.1)
 
-  '@v-c/collapse@0.0.4(vue@3.5.22(typescript@5.9.3))':
+  '@v-c/collapse@0.0.5(vue@3.5.22(typescript@5.9.3))':
     dependencies:
       '@v-c/util': 0.0.7(vue@3.5.22(typescript@5.9.3))
       vue: 3.5.22(typescript@5.9.3)
