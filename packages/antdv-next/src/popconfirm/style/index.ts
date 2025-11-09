@@ -1,12 +1,12 @@
-import type { FullToken, GenerateStyle, GetDefaultToken } from '../../theme/internal';
-import { genStyleHooks } from '../../theme/internal';
+import type { FullToken, GenerateStyle, GetDefaultToken } from '../../theme/internal'
+import { genStyleHooks } from '../../theme/internal'
 
 export interface ComponentToken {
   /**
    * @desc 确认框 z-index
    * @descEN z-index of Popconfirm
    */
-  zIndexPopup: number;
+  zIndexPopup: number
 }
 
 /**
@@ -29,7 +29,7 @@ const genBaseStyle: GenerateStyle<PopconfirmToken> = (token) => {
     fontSize,
     fontWeightStrong,
     colorTextHeading,
-  } = token;
+  } = token
 
   return {
     [componentCls]: {
@@ -53,8 +53,8 @@ const genBaseStyle: GenerateStyle<PopconfirmToken> = (token) => {
         },
 
         [`${componentCls}-title`]: {
-          fontWeight: fontWeightStrong,
-          color: colorTextHeading,
+          'fontWeight': fontWeightStrong,
+          'color': colorTextHeading,
 
           '&:only-child': {
             fontWeight: 'normal',
@@ -76,18 +76,18 @@ const genBaseStyle: GenerateStyle<PopconfirmToken> = (token) => {
         },
       },
     },
-  };
-};
+  }
+}
 
 // ============================== Export ==============================
 export const prepareComponentToken: GetDefaultToken<'Popconfirm'> = (token) => {
-  const { zIndexPopupBase } = token;
+  const { zIndexPopupBase } = token
 
   return {
     zIndexPopup: zIndexPopupBase + 60,
-  };
-};
+  }
+}
 
-export default genStyleHooks('Popconfirm', (token) => genBaseStyle(token), prepareComponentToken, {
+export default genStyleHooks('Popconfirm', token => genBaseStyle(token), prepareComponentToken, {
   resetStyle: false,
-});
+})
