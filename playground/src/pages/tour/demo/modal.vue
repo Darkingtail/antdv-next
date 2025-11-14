@@ -11,7 +11,6 @@ const steps: TourStepItem[] = [
   {
     title: 'Upload File',
     description: 'Put your files here.',
-
     target: ref1,
   },
   {
