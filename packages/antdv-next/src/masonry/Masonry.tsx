@@ -3,6 +3,7 @@ import type { Breakpoint } from '../_util/responsiveObserver.ts'
 import type { ComponentBaseProps } from '../config-provider/context.ts'
 import type { RowProps } from '../grid'
 import type { MasonryItemType } from './MasonryItem.tsx'
+import { defineComponent } from 'vue'
 
 export type Gap = number | undefined
 export type Key = string | number
@@ -40,3 +41,16 @@ export interface MasonryEmits {
 export interface MasonryRef {
   nativeElement: HTMLDivElement
 }
+
+type ItemColumnsType = [item: MasonryItemType, column: number]
+
+const Masonry = defineComponent(() => {
+  return () => {
+    return null
+  }
+}, {
+  name: 'AMasonry',
+  inheritAttrs: false,
+})
+
+export default Masonry

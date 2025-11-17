@@ -1,6 +1,9 @@
 import type { CSSProperties } from 'vue'
 import type { VueNode } from '../_util/type.ts'
 import type { MasonryProps } from './Masonry.tsx'
+import ResizeObserver from '@v-c/resize-observer'
+import { clsx } from '@v-c/util'
+import { filterEmpty } from '@v-c/util/dist/props-util'
 import { defineComponent } from 'vue'
 
 export interface MasonryItemType {
@@ -22,9 +25,31 @@ interface MasonryItemProps extends Pick<MasonryProps, 'itemRender'> {
 }
 
 const MasonryItem = defineComponent<MasonryItemProps>(
-  () => {
+  (props, { slots }) => {
     return () => {
-      return null
+      const { item, style, prefixCls, class: className, itemRender, index, column, onResize } = props
+      const itemPrefix = `${prefixCls}-item`
+      // ====================== Render ======================
+      const children = filterEmpty(slots?.default?.() ?? [])
+      const renderNode = children.length
+        ? children
+        : itemRender?.({
+            ...item,
+            index,
+            column,
+          })
+
+      let returnNode = (
+        <div style={style} class={clsx(itemPrefix, className)}>
+          {renderNode}
+        </div>
+      )
+      // Listen for resize
+      if (onResize) {
+        returnNode = <ResizeObserver onResize={onResize}>{returnNode}</ResizeObserver>
+      }
+
+      return returnNode
     }
   },
   {
