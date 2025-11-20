@@ -9,3 +9,7 @@ export type { FormEmits, FormInstance, FormProps, FormSlots }
   app.component(FormItem.name, FormItem)
 }
 export default Form
+
+export {
+  FormItem,
+}
