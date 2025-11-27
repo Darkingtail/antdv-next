@@ -70,5 +70,10 @@ declare module 'vue' {
     AInputGroup: typeof import('antdv-next')['InputGroup']
     AInputNumber: typeof import('antdv-next')['InputNumber']
     ATextarea: typeof import('antdv-next')['TextArea']
+    ATypography: typeof import('antdv-next')['Typography']
+    ATypographyText: typeof import('antdv-next')['TypographyText']
+    ATypographyTitle: typeof import('antdv-next')['TypographyTitle']
+    ATypographyParagraph: typeof import('antdv-next')['TypographyParagraph']
+    ATypographyLink: typeof import('antdv-next')['TypographyLink']
   }
 }

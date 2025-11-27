@@ -96,11 +96,11 @@ export type { TooltipAlignConfig, TooltipEmits, TooltipPlacement, TooltipProps, 
 export { default as Tour } from './tour'
 export type { TourEmits, TourLocale, TourProps, TourSlots, TourStepItem, TourStylesType } from './tour'
 export {
+  default as Typography,
   TypographyLink,
   TypographyParagraph,
   TypographyText,
   TypographyTitle,
-  default as Typography,
 } from './typography'
 export type {
   BlockProps as TypographyBaseProps,
