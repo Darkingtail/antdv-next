@@ -75,5 +75,7 @@ declare module 'vue' {
     ATypographyTitle: typeof import('antdv-next')['TypographyTitle']
     ATypographyParagraph: typeof import('antdv-next')['TypographyParagraph']
     ATypographyLink: typeof import('antdv-next')['TypographyLink']
+    ATabs: typeof import('antdv-next')['Tabs']
+    ATabPane: typeof import('antdv-next')['TabPane']
   }
 }

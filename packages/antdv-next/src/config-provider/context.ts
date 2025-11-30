@@ -37,11 +37,12 @@ import type { SpaceProps } from '../space'
 import type { SpinProps } from '../spin'
 import type { StatisticProps } from '../statistic'
 import type { SwitchProps } from '../switch'
+import type { TabsProps } from '../tabs'
 import type { TagProps } from '../tag'
-import type { BlockProps as TypographyBaseProps } from '../typography/interface'
 import type { AliasToken, MapToken, OverrideToken, SeedToken } from '../theme/interface'
 import type { TooltipProps } from '../tooltip'
 import type { TourProps } from '../tour'
+import type { BlockProps as TypographyBaseProps } from '../typography/interface'
 import type { RenderEmptyHandler } from './defaultRenderEmpty'
 import { computed, inject, provide, ref } from 'vue'
 
@@ -279,6 +280,19 @@ export type OTPConfig = ComponentStyleConfig & Pick<OTPProps, 'classes' | 'style
 
 export type SliderConfig = ComponentStyleConfig & Pick<SliderProps, 'styles' | 'classes'>
 
+export type TabsConfig = ComponentStyleConfig
+  & Pick<
+    TabsProps,
+    | 'indicator'
+    | 'indicatorSize'
+    | 'more'
+    | 'moreIcon'
+    | 'addIcon'
+    | 'removeIcon'
+    | 'classes'
+    | 'styles'
+  >
+
 export interface ConfigComponentProps {
   input?: InputConfig
   inputNumber?: InputNumberConfig
@@ -332,7 +346,7 @@ export interface ConfigComponentProps {
   tag?: TagConfig
   // table?: TableConfig;
   // card?: CardConfig;
-  // tabs?: TabsConfig;
+  tabs?: TabsConfig
   timeline?: ComponentStyleConfig
   // timePicker?: TimePickerConfig;
   tour?: TourConfig
