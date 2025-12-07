@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <a-splitter style="height: 200px;box-shadow: 0 0 10px rgba(0,0,0,0.1)">
     <a-splitter-panel default-size="40%" min="20%" max="70%">
