@@ -75,6 +75,8 @@ export { default as QRCode } from './qrcode'
 export type { QRCodeEmits, QRCodeProps } from './qrcode'
 export { default as Radio, RadioButton, RadioGroup } from './radio'
 export type { RadioChangeEvent, RadioEmits, RadioGroupEmits, RadioGroupOptionType, RadioGroupProps, RadioGroupSlots, RadioOptionType, RadioProps, RadioSlots } from './radio'
+export { default as Rate } from './rate'
+export type { RateEmits, RateProps } from './rate'
 export { default as Result } from './result'
 export type { ResultProps } from './result'
 export { default as Segmented } from './segmented'
@@ -105,7 +107,6 @@ export { default as Tooltip, UniqueProvider } from './tooltip'
 export type { TooltipAlignConfig, TooltipEmits, TooltipPlacement, TooltipProps, TooltipRef, TooltipSlots } from './tooltip'
 export { default as Tour } from './tour'
 export type { TourEmits, TourLocale, TourProps, TourSlots, TourStepItem, TourStylesType } from './tour'
-
 export {
   default as Typography,
   TypographyLink,

@@ -86,5 +86,6 @@ declare module 'vue' {
     ACardGrid: typeof import('antdv-next')['CardGrid']
     ACardMeta: typeof import('antdv-next')['CardMeta']
     AMasonry: typeof import('antdv-next')['Masonry']
+    ARate: typeof import('antdv-next')['Rate']
   }
 }
