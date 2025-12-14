@@ -236,6 +236,9 @@ importers:
       '@v-c/dropdown':
         specifier: ^1.0.1
         version: 1.0.1(vue@3.5.25(typescript@5.9.3))
+      '@v-c/image':
+        specifier: link:/Users/yanyu/workspace/github/antdv-next/vue-components/packages/image
+        version: link:../../../../../github/antdv-next/vue-components/packages/image
       '@v-c/input':
         specifier: ^1.0.0
         version: 1.0.0(vue@3.5.25(typescript@5.9.3))

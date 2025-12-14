@@ -18,6 +18,7 @@
     "@v-c/dialog": "^0.0.2",
     "@v-c/drawer": "^0.0.2",
     "@v-c/dropdown": "^1.0.1",
+    "@v-c/image": "link:/Users/yanyu/workspace/github/antdv-next/vue-components/packages/image",
     "@v-c/input": "^1.0.0",
     "@v-c/input-number": "^1.0.0",
     "@v-c/menu": "^1.0.1",
