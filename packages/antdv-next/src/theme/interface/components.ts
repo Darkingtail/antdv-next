@@ -61,7 +61,7 @@ import type { ComponentToken as TooltipComponentToken } from '../../tooltip/styl
 import type { ComponentToken as TourComponentToken } from '../../tour/style'
 import type { ComponentToken as TransferComponentToken } from '../../transfer/style'
 // import type { ComponentToken as TreeSelectComponentToken } from '../../tree-select/style';
-// import type { ComponentToken as TreeComponentToken } from '../../tree/style';
+import type { ComponentToken as TreeComponentToken } from '../../tree/style'
 import type { ComponentToken as TypographyComponentToken } from '../../typography/style'
 
 export interface ComponentTokenMap {
@@ -110,7 +110,7 @@ export interface ComponentTokenMap {
   Switch?: SwitchComponentToken
   Splitter?: SplitterComponentToken
   Tag?: TagComponentToken
-  // Tree?: TreeComponentToken;
+  Tree?: TreeComponentToken
   // TreeSelect?: TreeSelectComponentToken;
   Typography?: TypographyComponentToken
   Timeline?: TimelineComponentToken

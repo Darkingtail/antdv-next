@@ -1,33 +1,37 @@
 <div align="center"><a name="readme-top"></a>
 
+
 <img height="180" src="./playground/public/antdv-next.svg">
 
 <h1>Antdv Next</h1>
 
-Antdv Next is a Vue 3 enterprise component library built on the Ant Design design system.
-
+一套基于 Ant Design 设计体系的 Vue 3 企业级组件库 —— Antdv Next。
 </div>
 
-## ✨ Features
 
-- 🌈 Enterprise-class UI designed for web applications.
-- 📦 A set of high-quality React components out of the box.
-- 🛡 Written in TypeScript with predictable static types.
-- ⚙️ Whole package of design resources and development tools.
-- 🌍 Internationalization support for dozens of languages.
-- 🎨 Powerful theme customization based on CSS-in-JS.
+## ✨ 特性
 
-## 🖥 Environment Support
+- 🌈 提炼自企业级中后台产品的交互语言和视觉风格。
+- 📦 开箱即用的高质量 React 组件。
+- 🛡 使用 TypeScript 开发，提供完整的类型定义文件。
+- ⚙️ 应用开发框架和设计工具配套。
+- 🌍 数十个国际化语言支持。
+- 🎨 基于 CSS-in-JS 的主题定制能力。
 
-- Modern browsers
-- Server-side Rendering
+## 🖥 兼容环境
+
+支持范围：https://browsersl.ist/#q=defaults
+
+- 现代浏览器。
+- 支持服务端渲染。
 - [Electron](https://www.electronjs.org/)
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="Edge" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/electron/electron_48x48.png" alt="Electron" width="24px" height="24px" />](https://godban.github.io/browsers-support-badges/)<br>Electron |
 | --- | --- | --- | --- | --- |
 | Edge | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
 
-## 📦 Install
+
+## 📦 安装
 
 ```bash
 npm install antdv-next
@@ -45,11 +49,9 @@ pnpm add antdv-next
 bun add antdv-next
 ```
 
+## 鸣谢
 
-## Acknowledgements
-
-Antdv Next is inspired by and built upon the following open-source projects.
-
+Antdv Next 在设计与实现过程中参考、借鉴并使用了以下优秀的开源项目，在此表示感谢。
 - [Ant Design](https://ant.design/)
 - [Vue.js](https://vuejs.org/)
 - [Vite](https://vitejs.dev/)
