@@ -51,6 +51,7 @@ import type { TagProps } from '../tag'
 import type { AliasToken, MapToken, OverrideToken, SeedToken } from '../theme/interface'
 import type { TooltipProps } from '../tooltip'
 import type { TourProps } from '../tour'
+import type { TransferProps } from '../transfer/interface'
 import type { TreeSelectProps } from '../tree-select'
 import type { TreeProps } from '../tree/Tree.tsx'
 import type { BlockProps as TypographyBaseProps } from '../typography/interface'
@@ -279,6 +280,8 @@ export type CheckboxConfig = ComponentStyleConfig & Pick<CheckboxProps, 'classes
 
 export type SwitchStyleConfig = ComponentStyleConfig & Pick<SwitchProps, 'classes' | 'styles'>
 
+export type TransferConfig = ComponentStyleConfig & Pick<TransferProps, 'selectionsIcon' | 'classes' | 'styles'>
+
 export type InputConfig = ComponentStyleConfig
   & Pick<InputProps, 'autoComplete' | 'classes' | 'styles' | 'allowClear' | 'variant'>
 
@@ -395,7 +398,7 @@ export interface ConfigComponentProps {
   radio?: RadioConfig
   rate?: ComponentStyleConfig
   switch?: SwitchStyleConfig
-  // transfer?: TransferConfig;
+  transfer?: TransferConfig
   avatar?: ComponentStyleConfig
   message?: ComponentStyleConfig
   tag?: TagConfig

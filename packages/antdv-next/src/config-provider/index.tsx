@@ -35,6 +35,7 @@ const PASSED_PROPS: Exclude<
   'wave',
   // 'input',
   'pagination',
+  'transfer',
   // 'form',
   // 'select',
   'button',

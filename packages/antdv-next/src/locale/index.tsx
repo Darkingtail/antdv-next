@@ -3,6 +3,7 @@ import type { TransferLocale as TransferLocaleForEmpty } from '../empty'
 import type { PaginationLocale } from '../pagination/interface.ts'
 import type { PopconfirmLocale } from '../popconfirm/PurePanel'
 import type { TourLocale } from '../tour/interface.ts'
+import type { TransferLocale } from '../transfer/interface.ts'
 import { computed, defineComponent, inject, provide } from 'vue'
 
 export type LocaleContextProps = Locale & { exist?: boolean }
@@ -28,7 +29,7 @@ export interface Locale {
   // Modal?: ModalLocale;
   Tour?: TourLocale
   Popconfirm?: PopconfirmLocale
-  // Transfer?: TransferLocale;
+  Transfer?: TransferLocale
   Select?: Record<string, any>
   // Upload?: UploadLocale;
   Empty?: TransferLocaleForEmpty

@@ -23,6 +23,7 @@ import type {
   PopconfirmConfig,
   PopoverConfig,
   PopupOverflow,
+  TransferConfig,
   SelectConfig,
   SpaceConfig,
   SpinConfig,
@@ -113,7 +114,7 @@ export interface ConfigProviderProps {
   radio?: ComponentStyleConfig
   rate?: ComponentStyleConfig
   switch?: ComponentStyleConfig
-  // transfer?: TransferConfig;
+  transfer?: TransferConfig
   avatar?: ComponentStyleConfig
   message?: ComponentStyleConfig
   tag?: TagConfig

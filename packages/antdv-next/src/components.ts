@@ -120,6 +120,35 @@ export { default as Steps } from './steps'
 export type { StepsProps } from './steps'
 export { default as Switch } from './switch'
 export type { SwitchEmits, SwitchProps, SwitchSize, SwitchSlots } from './switch'
+export { default as Transfer } from './transfer'
+export type {
+  KeyWise,
+  KeyWiseTransferItem,
+  ListStyle,
+  PaginationType as TransferPaginationType,
+  RenderResult,
+  RenderResultObject,
+  SelectAllLabel,
+  TransferClassNamesType,
+  TransferCustomListBodyProps,
+  TransferDirection,
+  TransferEmits,
+  TransferItem,
+  TransferKey,
+  TransferListBodyProps,
+  TransferListProps,
+  TransferLocale,
+  TransferOperationProps,
+  TransferProps,
+  TransferRender,
+  TransferSearchEmits,
+  TransferSearchOption,
+  TransferSearchProps,
+  TransferSearchSlots,
+  TransferSemanticName,
+  TransferSlots,
+  TransferStylesType,
+} from './transfer'
 export { TabPane, default as Tabs } from './tabs'
 export type { TabPaneProps, TabsEmits, TabsProps, TabsRef, TabsSlots } from './tabs'
 export { CheckableTag, CheckableTagGroup, default as Tag } from './tag'
