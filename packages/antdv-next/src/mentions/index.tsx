@@ -2,14 +2,14 @@ import type {
   DataDrivenOptionProps as VcMentionsOptionProps,
   MentionsProps as VcMentionsProps,
   MentionsRef as VcMentionsRef,
-} from '@v-c/metions'
+} from '@v-c/mentions'
 import type { App, SlotsType } from 'vue'
 import type { SemanticClassNamesType, SemanticStylesType } from '../_util/hooks'
 import type { InputStatus } from '../_util/statusUtils'
 import type { VueNode } from '../_util/type.ts'
 import type { ComponentBaseProps, Variant } from '../config-provider/context'
 import type { SizeType } from '../config-provider/SizeContext'
-import VcMentions, { Option } from '@v-c/metions'
+import VcMentions, { Option } from '@v-c/mentions'
 import { clsx } from '@v-c/util'
 import { filterEmpty } from '@v-c/util/dist/props-util'
 import { omit } from 'es-toolkit'

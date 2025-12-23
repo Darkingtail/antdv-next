@@ -1,7 +1,7 @@
 import type { App, CSSProperties, Ref } from 'vue'
 import type { Breakpoint, ScreenMap } from '../_util/responsiveObserver.ts'
 import { classNames } from '@v-c/util'
-import { omit } from 'es-toolkit'
+import { getAttrStyleAndClass } from '@v-c/util/dist/props-util'
 import { computed, defineComponent, shallowRef, watch } from 'vue'
 import { responsiveArray } from '../_util/responsiveObserver.ts'
 import { useConfig } from '../config-provider/context.ts'
@@ -99,6 +99,7 @@ const Row = defineComponent<RowProps>(
 
     return () => {
       const { wrap } = props
+      const { className, style, restAttrs } = getAttrStyleAndClass(attrs)
       const classes = classNames(
         prefixCls.value,
         {
@@ -109,6 +110,7 @@ const Row = defineComponent<RowProps>(
         },
         hashId.value,
         cssVarCls.value,
+        className,
       )
 
       // Add gutter related style
@@ -124,7 +126,7 @@ const Row = defineComponent<RowProps>(
       rowStyle.rowGap = gutterV
 
       return (
-        <div {...omit(attrs, ['class', 'style'])} class={classes} style={[rowStyle, (attrs as any).style]}>
+        <div {...restAttrs} class={classes} style={[rowStyle, style]}>
           {slots?.default?.()}
         </div>
       )

@@ -245,12 +245,12 @@ importers:
       '@v-c/input-number':
         specifier: ^1.0.0
         version: 1.0.0(vue@3.5.25(typescript@5.9.3))
+      '@v-c/mentions':
+        specifier: ^0.0.1
+        version: 0.0.1(vue@3.5.25(typescript@5.9.3))
       '@v-c/menu':
         specifier: ^1.0.1
         version: 1.0.1(vue@3.5.25(typescript@5.9.3))
-      '@v-c/metions':
-        specifier: link:/Users/yanyu/workspace/github/antdv-next/vue-components/packages/mentions
-        version: link:../../../../../github/antdv-next/vue-components/packages/mentions
       '@v-c/mutate-observer':
         specifier: 'catalog:'
         version: 0.0.2(vue@3.5.25(typescript@5.9.3))
@@ -291,8 +291,8 @@ importers:
         specifier: ^0.0.3
         version: 0.0.3(vue@3.5.25(typescript@5.9.3))
       '@v-c/textarea':
-        specifier: ^1.0.0
-        version: 1.0.0(vue@3.5.25(typescript@5.9.3))
+        specifier: ^1.0.1
+        version: 1.0.1(vue@3.5.25(typescript@5.9.3))
       '@v-c/tooltip':
         specifier: ^1.0.1
         version: 1.0.1(vue@3.5.25(typescript@5.9.3))
@@ -1678,6 +1678,11 @@ packages:
     peerDependencies:
       vue: ^3.0.0
 
+  '@v-c/mentions@0.0.1':
+    resolution: {integrity: sha512-Ny7YaLKnVa4xz5qP60JAjc6Mw5PSAF2pQZuMn73b6OiV0++mmt7iww8JGp9jBqeAXpw7d+sJIYDCmRvfraBH5w==}
+    peerDependencies:
+      vue: ^3.0.0
+
   '@v-c/menu@1.0.1':
     resolution: {integrity: sha512-WhNOwTrQGPkdo9axwMPr9n1p9o6di9ylPfe++AR61syWX4HSEY75d162MjJjRp4OIh5zy7OiZyrLstpHpMkUmQ==}
     peerDependencies:
@@ -1764,8 +1769,8 @@ packages:
     peerDependencies:
       vue: ^3.0.0
 
-  '@v-c/textarea@1.0.0':
-    resolution: {integrity: sha512-VeTpSUnqrtBGfBqif9Hcvco8xOTw3Ggrzzjd23OEwcmXIwOP3v1+C7FrJEL1iaD272Dn2YbCyLUrYXGHs2DnpA==}
+  '@v-c/textarea@1.0.1':
+    resolution: {integrity: sha512-0zT3vMmxG/rz9eqyFyK69JlluVT27tYGV8hlITWEBe8/Yp8gLEjAZnz2rdNXYaxExpcSfsTG3rDs6VYmmFlCjw==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -5384,6 +5389,15 @@ snapshots:
       '@v-c/util': 1.0.4(vue@3.5.25(typescript@5.9.3))
       vue: 3.5.25(typescript@5.9.3)
 
+  '@v-c/mentions@0.0.1(vue@3.5.25(typescript@5.9.3))':
+    dependencies:
+      '@v-c/input': 1.0.0(vue@3.5.25(typescript@5.9.3))
+      '@v-c/menu': 1.0.1(vue@3.5.25(typescript@5.9.3))
+      '@v-c/textarea': 1.0.1(vue@3.5.25(typescript@5.9.3))
+      '@v-c/trigger': 1.0.2(vue@3.5.25(typescript@5.9.3))
+      '@v-c/util': 1.0.4(vue@3.5.25(typescript@5.9.3))
+      vue: 3.5.25(typescript@5.9.3)
+
   '@v-c/menu@1.0.1(vue@3.5.25(typescript@5.9.3))':
     dependencies:
       '@v-c/overflow': 1.0.1(vue@3.5.25(typescript@5.9.3))
@@ -5492,7 +5506,7 @@ snapshots:
       '@v-c/util': 1.0.4(vue@3.5.25(typescript@5.9.3))
       vue: 3.5.25(typescript@5.9.3)
 
-  '@v-c/textarea@1.0.0(vue@3.5.25(typescript@5.9.3))':
+  '@v-c/textarea@1.0.1(vue@3.5.25(typescript@5.9.3))':
     dependencies:
       '@v-c/input': 1.0.0(vue@3.5.25(typescript@5.9.3))
       '@v-c/resize-observer': 1.0.3(vue@3.5.25(typescript@5.9.3))
