@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import { createApp } from 'vue'
 import DocHeading from '@/components/docs/heading.vue'
 import { router } from '@/routes'
+import { setupRouterGuard } from '@/routes/guard'
 import App from './App.vue'
 import CodeDemo from './components/code-demo'
 import 'antdv-next/style/reset.css'
@@ -14,6 +15,7 @@ import './assets/styles/common.css'
 const app = createApp(App)
 app.use(router)
 app.use(antd)
+setupRouterGuard(router)
 app.use(CodeDemo)
 app.component('DocHeading', DocHeading)
 app.use(createPinia())

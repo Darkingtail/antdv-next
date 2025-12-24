@@ -12,6 +12,7 @@
     "@antdv-next/cssinjs": "workspace:^",
     "@antdv-next/icons": "workspace:^",
     "@antdv-next/unocss": "workspace:^",
+    "@vueuse/core": "catalog:",
     "antdv-next": "workspace:^",
     "es-toolkit": "catalog:",
     "pinia": "catalog:",

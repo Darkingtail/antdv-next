@@ -1,22 +1,50 @@
 <script setup lang="ts">
+import type { MenuEmits } from 'antdv-next'
 import { GithubOutlined } from '@antdv-next/icons'
-import { useBreakpoint } from 'antdv-next'
-import { ref, shallowRef } from 'vue'
+import { storeToRefs } from 'pinia'
+import { ref, shallowRef, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import DirectionIcon from '@/components/icons/directionIcon.vue'
 import SearchIcon from '@/components/icons/search.vue'
+import { useMobile } from '@/composables/mobile'
 import { headerItems } from '@/config/menu/header'
 import SwitchBtn from '@/layouts/base/components/switch-btn.vue'
+import { useAppStore } from '@/stores/app.ts'
 
-const selectedKeys = ref<string[]>([])
-const breakpoint = useBreakpoint()
+const route = useRoute()
+const appStore = useAppStore()
+const { headerKey } = storeToRefs(appStore)
 const versions = ref([
   {
     label: '1.0.0',
     value: '1.0.0',
   },
 ])
+const { isMobile } = useMobile()
 const currentVersion = shallowRef('1.0.0')
 const searchValue = shallowRef()
+const handleHeaderChange: MenuEmits['click'] = (info) => {
+  appStore.setHeaderKey([info.key])
+}
+
+const itemKeys = headerItems.map(item => item?.key).filter(Boolean) as string[]
+watch(
+  () => route.path,
+  () => {
+    const exclude = ['', '/', route.path]
+    const matched = route.matched?.map(v => v.path).filter(path => !exclude.includes(path))
+    appStore.setSiderOpenKeys(matched)
+    appStore.setSiderKey([route.path])
+    const foundKey = itemKeys.find(v => matched?.includes?.(v))
+    if (foundKey) {
+      appStore.setHeaderKey([foundKey])
+    }
+    else {
+      appStore.setHeaderKey([])
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <template>
@@ -40,14 +68,14 @@ const searchValue = shallowRef()
             <SearchIcon class="ant-doc-search-bar-svg" />
             <input v-model="searchValue" class="ant-doc-search-bar-input" placeholder="输入关键字搜索...">
           </div>
-          <template v-if="breakpoint?.md">
+          <template v-if="!isMobile">
             <a-menu
-              v-model:selected-keys="selectedKeys"
+              :selected-keys="headerKey"
               class="h-full border-b-none ant-doc-header-menu"
               mode="horizontal"
               :items="headerItems"
+              @click="handleHeaderChange"
             />
-            <div style="display: none" aria-hidden="true" />
             <a-select
               v-model:value="currentVersion"
               :options="versions"
