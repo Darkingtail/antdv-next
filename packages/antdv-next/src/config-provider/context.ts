@@ -1,7 +1,7 @@
 import type { DerivativeFunc } from '@antdv-next/cssinjs'
 import type { CSSProperties, InjectionKey, Ref } from 'vue'
 import type { MaskType } from '../_util/hooks'
-import type { VueNode } from '../_util/type.ts'
+import type { AnyObject, VueNode } from '../_util/type.ts'
 import type { WarningContextProps } from '../_util/warning.ts'
 import type { ShowWaveEffect } from '../_util/wave/interface.ts'
 import type { AlertProps } from '../alert'
@@ -32,9 +32,9 @@ import type { MasonryProps } from '../masonry/Masonry.tsx'
 import type { MenuProps } from '../menu'
 import type { ModalProps } from '../modal/interface.ts'
 import type { ArgsProps as NotificationProps } from '../notification'
+import type { PaginationProps } from '../pagination/interface.ts'
 import type { PopconfirmProps } from '../popconfirm'
 import type { PopoverProps } from '../popover'
-import type { PaginationProps } from '../pagination/interface.ts'
 import type { QRCodeProps } from '../qrcode'
 import type { RadioProps } from '../radio/interface.ts'
 import type { ResultProps } from '../result'
@@ -47,6 +47,7 @@ import type { SpinProps } from '../spin'
 import type { StatisticProps } from '../statistic'
 import type { StepsProps } from '../steps'
 import type { SwitchProps } from '../switch'
+import type { TableProps } from '../table'
 import type { TabsProps } from '../tabs'
 import type { TagProps } from '../tag'
 import type { AliasToken, MapToken, OverrideToken, SeedToken } from '../theme/interface'
@@ -358,6 +359,15 @@ export type TreeSelectConfig = ComponentStyleConfig
 export type UploadConfig = ComponentStyleConfig
   & Pick<UploadProps, 'classes' | 'styles' | 'customRequest'>
 
+export interface TableConfig<RecordType extends AnyObject = AnyObject>
+  extends ComponentStyleConfig {
+  expandable?: {
+    expandIcon?: NonNullable<TableProps['expandable']>['expandIcon']
+  }
+  rowKey?: TableProps<RecordType>['rowKey']
+  classes?: TableProps['classes']
+  styles?: TableProps['styles']
+}
 export interface ConfigComponentProps {
   input?: InputConfig
   inputNumber?: InputNumberConfig
@@ -409,7 +419,7 @@ export interface ConfigComponentProps {
   avatar?: ComponentStyleConfig
   message?: ComponentStyleConfig
   tag?: TagConfig
-  // table?: TableConfig;
+  table?: TableConfig
   card?: CardConfig
   cardMeta?: CardMetaConfig
   tabs?: TabsConfig

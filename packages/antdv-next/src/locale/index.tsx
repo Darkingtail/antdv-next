@@ -36,6 +36,7 @@ export interface Locale {
   global?: {
     placeholder?: string
     close?: string
+    sortable?: string
   }
   Icon?: Record<string, any>
   Text?: {

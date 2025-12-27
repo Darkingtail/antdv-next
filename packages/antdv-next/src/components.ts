@@ -136,6 +136,28 @@ export { default as Steps } from './steps'
 export type { StepsProps } from './steps'
 export { default as Switch } from './switch'
 export type { SwitchEmits, SwitchProps, SwitchSize, SwitchSlots } from './switch'
+export {
+  default as Table,
+  Column as TableColumn,
+  ColumnGroup as TableColumnGroup,
+  Summary as TableSummary,
+  SummaryCell as TableSummaryCell,
+  SummaryRow as TableSummaryRow,
+} from './table'
+export type {
+  TableClassNamesType,
+  ColumnsType as TableColumnsType,
+  ColumnType as TableColumnType,
+  TableEmits,
+  TableLocale,
+  TablePaginationConfig,
+  TableProps,
+  TableRowSelection,
+  TableSlots,
+  SorterResult as TableSorterResult,
+  SortOrder as TableSortOrder,
+  TableStylesType,
+} from './table'
 export { TabPane, default as Tabs } from './tabs'
 export type { TabPaneProps, TabsEmits, TabsProps, TabsRef, TabsSlots } from './tabs'
 export { CheckableTag, CheckableTagGroup, default as Tag } from './tag'

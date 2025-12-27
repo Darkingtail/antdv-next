@@ -42,7 +42,7 @@
     "@v-c/textarea": "^1.0.1",
     "@v-c/tooltip": "^1.0.1",
     "@v-c/tour": "^1.0.1",
-    "@v-c/tree": "^0.0.1",
+    "@v-c/tree": "link:/Users/yanyu/workspace/github/antdv-next/vue-components/packages/tree",
     "@v-c/tree-select": "^0.0.1",
     "@v-c/trigger": "^1.0.2",
     "@v-c/upload": "^0.0.1",

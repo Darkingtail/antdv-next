@@ -312,8 +312,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(vue@3.5.25(typescript@5.9.3))
       '@v-c/tree':
-        specifier: ^0.0.1
-        version: 0.0.1(vue@3.5.25(typescript@5.9.3))
+        specifier: link:/Users/yanyu/workspace/github/antdv-next/vue-components/packages/tree
+        version: link:../../../../../github/antdv-next/vue-components/packages/tree
       '@v-c/tree-select':
         specifier: ^0.0.1
         version: 0.0.1(vue@3.5.25(typescript@5.9.3))
