@@ -203,8 +203,8 @@ const InternalCheckbox = defineComponent<
         TARGET_CLS,
         hashId.value,
       )
+      console.log(props.checked, 'checked')
       // ============================== Render ==============================
-
       return (
         <Wave component="Checkbox" disabled={mergedDisabled.value}>
           {/*    */}

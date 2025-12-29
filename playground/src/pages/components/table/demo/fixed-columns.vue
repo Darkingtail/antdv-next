@@ -14,34 +14,50 @@ interface DataType {
   name: string
   age: number
   address: string
-  company: string
-  email: string
 }
 
 const columns: TableProps['columns'] = [
-  { title: 'Name', dataIndex: 'name', key: 'name', width: 150, fixed: 'start' },
-  { title: 'Age', dataIndex: 'age', key: 'age', width: 100 },
-  { title: 'Address', dataIndex: 'address', key: 'address', width: 200 },
-  { title: 'Company', dataIndex: 'company', key: 'company', width: 200 },
-  { title: 'Email', dataIndex: 'email', key: 'email', width: 220 },
-  { title: 'Action', key: 'action', fixed: 'end', width: 120 },
+  { title: 'Full Name', dataIndex: 'name', key: 'name', width: 100, fixed: 'start' },
+  { title: 'Age', dataIndex: 'age', key: 'age', width: 100, fixed: 'start', sorter: true },
+  { title: 'Column 1', dataIndex: 'address', key: '1' },
+  { title: 'Column 2', dataIndex: 'address', key: '2' },
+  { title: 'Column 3', dataIndex: 'address', key: '3' },
+  { title: 'Column 4', dataIndex: 'address', key: '4' },
+  { title: 'Column 5', dataIndex: 'address', key: '5' },
+  { title: 'Column 6', dataIndex: 'address', key: '6' },
+  { title: 'Column 7', dataIndex: 'address', key: '7' },
+  { title: 'Column 8', dataIndex: 'address', key: '8' },
+  { title: 'Column 9', dataIndex: 'address', key: '9' },
+  { title: 'Column 10', dataIndex: 'address', key: '10' },
+  { title: 'Column 11', dataIndex: 'address', key: '11' },
+  { title: 'Column 12', dataIndex: 'address', key: '12' },
+  { title: 'Column 13', dataIndex: 'address', key: '13' },
+  { title: 'Column 14', dataIndex: 'address', key: '14' },
+  { title: 'Column 15', dataIndex: 'address', key: '15' },
+  { title: 'Column 16', dataIndex: 'address', key: '16' },
+  { title: 'Column 17', dataIndex: 'address', key: '17' },
+  { title: 'Column 18', dataIndex: 'address', key: '18' },
+  { title: 'Column 19', dataIndex: 'address', key: '19' },
+  { title: 'Column 20', dataIndex: 'address', key: '20' },
+  { title: 'Action', key: 'operation', fixed: 'end', width: 100 },
 ]
 
-const dataSource: DataType[] = Array.from({ length: 5 }).map((_, i) => ({
-  key: String(i + 1),
-  name: `John Brown ${i + 1}`,
-  age: 30 + i,
-  address: `New York No. ${i + 1} Lake Park`,
-  company: 'Ant Design',
-  email: `john${i + 1}@demo.com`,
-}))
+const dataSource: DataType[] = [
+  { key: '1', name: 'Olivia', age: 32, address: 'New York Park' },
+  { key: '2', name: 'Ethan', age: 40, address: 'London Park' },
+]
 </script>
 
 <template>
-  <a-table :columns="columns" :data-source="dataSource" :scroll="{ x: 1000 }">
+  <a-table
+    :columns="columns"
+    :data-source="dataSource"
+    :pagination="false"
+    :scroll="{ x: 'max-content' }"
+  >
     <template #bodyCell="{ column }">
-      <template v-if="column.key === 'action'">
-        <a>Action</a>
+      <template v-if="column.key === 'operation'">
+        <a>action</a>
       </template>
     </template>
   </a-table>

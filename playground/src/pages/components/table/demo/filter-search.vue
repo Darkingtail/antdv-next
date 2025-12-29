@@ -20,26 +20,46 @@ const columns: TableProps['columns'] = [
   {
     title: 'Name',
     dataIndex: 'name',
-    key: 'name',
     filters: [
-      { text: 'Joe Black', value: 'Joe Black' },
-      { text: 'Jim Green', value: 'Jim Green' },
-      { text: 'John Brown', value: 'John Brown' },
+      { text: 'Joe', value: 'Joe' },
+      { text: 'Category 1', value: 'Category 1' },
+      { text: 'Category 2', value: 'Category 2' },
     ],
+    filterMode: 'tree',
     filterSearch: true,
-    onFilter: (value, record) => record.name.includes(String(value)),
+    onFilter: (value, record) => record.name.startsWith(String(value)),
+    width: '30%',
   },
-  { title: 'Age', dataIndex: 'age', key: 'age' },
-  { title: 'Address', dataIndex: 'address', key: 'address' },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    sorter: (a, b) => a.age - b.age,
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+    filters: [
+      { text: 'London', value: 'London' },
+      { text: 'New York', value: 'New York' },
+    ],
+    onFilter: (value, record) => record.address.startsWith(String(value)),
+    filterSearch: true,
+    width: '40%',
+  },
 ]
 
 const dataSource: DataType[] = [
   { key: '1', name: 'John Brown', age: 32, address: 'New York No. 1 Lake Park' },
   { key: '2', name: 'Jim Green', age: 42, address: 'London No. 1 Lake Park' },
   { key: '3', name: 'Joe Black', age: 32, address: 'Sydney No. 1 Lake Park' },
+  { key: '4', name: 'Jim Red', age: 32, address: 'London No. 2 Lake Park' },
 ]
+
+const handleChange: TableProps['onChange'] = (pagination, filters, sorter, extra) => {
+  console.log('params', pagination, filters, sorter, extra)
+}
 </script>
 
 <template>
-  <a-table :columns="columns" :data-source="dataSource" />
+  <a-table :columns="columns" :data-source="dataSource" @change="handleChange" />
 </template>

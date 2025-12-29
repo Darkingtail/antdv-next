@@ -92,12 +92,12 @@ function renderFilterItems({
     }
 
     const Component = filterMultiple ? Checkbox : Radio
-
+    const checked = filteredKeys.includes(key)
     const item = {
       key: filter.value !== undefined ? key : index,
       label: (
         <>
-          <Component checked={filteredKeys.includes(key)} />
+          <Component checked={checked} />
           <span>{filter.text}</span>
         </>
       ),
@@ -474,7 +474,6 @@ const FilterDropdown = defineComponent<
               searchValue: searchValue.value,
             })
             const isEmpty = items.every(item => item === null)
-
             return (
               <>
                 <FilterSearch
@@ -533,7 +532,6 @@ const FilterDropdown = defineComponent<
             </>
           )
         }
-
         if (filterDropdownDefined.value) {
           dropdownContent = <OverrideProvider value={{ selectable: undefined }}>{dropdownContent}</OverrideProvider>
         }

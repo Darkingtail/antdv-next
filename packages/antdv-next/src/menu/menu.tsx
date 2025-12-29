@@ -197,7 +197,7 @@ const InternalMenu = defineComponent<
     })
 
     // ======================= Selectable ========================
-    const mergedSelectable = computed(() => overrideObj?.value?.selectable ?? props?.selectable)
+    const mergedSelectable = computed(() => props?.selectable ?? overrideObj?.value?.selectable)
 
     // ======================== Collapsed ========================
     // Inline Collapsed
@@ -293,7 +293,6 @@ const InternalMenu = defineComponent<
       const itemIcon = slots?.itemIcon ?? props?.itemIcon
       const labelRender = slots?.labelRender ?? props?.labelRender
       const extraRender = slots?.extraRender ?? props?.extraRender
-
       // ========================= Render ==========================
       return (
         <OverrideProvider value={null}>

@@ -22,14 +22,19 @@ const columns: TableProps['columns'] = [
   { title: 'Address', dataIndex: 'address', key: 'address' },
 ]
 
-const dataSource: DataType[] = Array.from({ length: 20 }).map((_, i) => ({
+const dataSource: DataType[] = Array.from({ length: 100 }).map((_, i) => ({
   key: i,
-  name: `John Brown ${i}`,
-  age: 20 + i,
+  name: `Edward King ${i}`,
+  age: 32,
   address: `London, Park Lane no. ${i}`,
 }))
 </script>
 
 <template>
-  <a-table :columns="columns" :data-source="dataSource" :scroll="{ y: 240 }" />
+  <a-table
+    :columns="columns"
+    :data-source="dataSource"
+    :pagination="{ pageSize: 50 }"
+    :scroll="{ y: 275 }"
+  />
 </template>
