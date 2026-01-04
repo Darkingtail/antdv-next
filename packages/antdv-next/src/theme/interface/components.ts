@@ -7,14 +7,14 @@ import type { ComponentToken as AvatarComponentToken } from '../../avatar/style'
 import type { ComponentToken as BadgeComponentToken } from '../../badge/style'
 import type { ComponentToken as BreadcrumbComponentToken } from '../../breadcrumb/style'
 import type { ComponentToken as ButtonComponentToken } from '../../button/style'
-// import type { ComponentToken as CalendarComponentToken } from '../../calendar/style';
+import type { ComponentToken as CalendarComponentToken } from '../../calendar/style'
 import type { ComponentToken as CardComponentToken } from '../../card/style'
 import type { ComponentToken as CarouselComponentToken } from '../../carousel/style'
 import type { ComponentToken as CascaderComponentToken } from '../../cascader/style'
 import type { ComponentToken as CheckboxComponentToken } from '../../checkbox/style'
 import type { ComponentToken as CollapseComponentToken } from '../../collapse/style'
 import type { ComponentToken as ColorPickerComponentToken } from '../../color-picker/style'
-// import type { ComponentToken as DatePickerComponentToken } from '../../date-picker/style';
+import type { ComponentToken as DatePickerComponentToken } from '../../date-picker/style'
 import type { ComponentToken as DescriptionsComponentToken } from '../../descriptions/style'
 import type { ComponentToken as DividerComponentToken } from '../../divider/style'
 import type { ComponentToken as DrawerComponentToken } from '../../drawer/style'
@@ -79,7 +79,7 @@ export interface ComponentTokenMap {
   Checkbox?: CheckboxComponentToken
   ColorPicker?: ColorPickerComponentToken
   Collapse?: CollapseComponentToken
-  // DatePicker?: DatePickerComponentToken;
+  DatePicker?: DatePickerComponentToken
   Descriptions?: DescriptionsComponentToken
   Divider?: DividerComponentToken
   Drawer?: DrawerComponentToken
@@ -116,7 +116,7 @@ export interface ComponentTokenMap {
   Timeline?: TimelineComponentToken
   Transfer?: TransferComponentToken
   Tabs?: TabsComponentToken
-  // Calendar?: CalendarComponentToken;
+  Calendar?: CalendarComponentToken
   Steps?: StepsComponentToken
   Menu?: MenuComponentToken
   Modal?: ModalComponentToken

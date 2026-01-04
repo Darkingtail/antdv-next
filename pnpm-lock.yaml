@@ -269,6 +269,9 @@ importers:
       '@v-c/pagination':
         specifier: ^0.0.1
         version: 0.0.1(vue@3.5.25(typescript@5.9.3))
+      '@v-c/picker':
+        specifier: link:/Users/yanyu/workspace/github/antdv-next/vue-components/packages/picker
+        version: link:../../../../../github/antdv-next/vue-components/packages/picker
       '@v-c/progress':
         specifier: ^0.0.2
         version: 0.0.2(vue@3.5.25(typescript@5.9.3))
