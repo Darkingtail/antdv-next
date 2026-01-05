@@ -338,7 +338,6 @@ function generatePicker<DateType extends AnyObject = AnyObject>(generateConfig: 
           const inputRender = slots.inputRender || (props as any).inputRender
             ? (inputProps: Record<string, any>) => resolveRender('inputRender', [inputProps], inputProps)
             : undefined
-
           return (
             <ContextIsolator space>
               <Picker
