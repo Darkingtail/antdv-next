@@ -6,6 +6,7 @@ import canUseDom from '@v-c/util/dist/Dom/canUseDom'
 import { updateCSS } from '@v-c/util/dist/Dom/dynamicCSS'
 import { computed } from 'vue'
 import { ATTR_MARK, ATTR_TOKEN, CSS_IN_JS_INSTANCE, useStyleContext } from '../StyleContext'
+import { collectStyleText } from '../ssr/styleCollector'
 import { flattenToken, memoResult, token2key, toStyleStr } from '../util'
 import { transformToken } from '../util/css-variables'
 import { useGlobalCache } from './useGlobalCache'
@@ -210,8 +211,14 @@ export default function useCacheToken<
     ([, , , , themeKey]) => {
       cleanTokenStyle(themeKey, styleContext.value.cache.instanceId)
     },
-    ([, , , cssVarsStr, themeKey]) => {
+    (cacheValue) => {
+      const [, , , cssVarsStr, themeKey] = cacheValue
       if (!canUseDom()) {
+        const extracted = extract(cacheValue, {}, { plain: false })
+        if (extracted) {
+          const [, , styleText] = extracted
+          collectStyleText(styleText)
+        }
         return
       }
       if (!cssVarsStr) {

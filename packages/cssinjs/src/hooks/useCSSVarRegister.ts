@@ -5,6 +5,7 @@ import canUseDom from '@v-c/util/dist/Dom/canUseDom'
 import { removeCSS, updateCSS } from '@v-c/util/dist/Dom/dynamicCSS'
 import { computed } from 'vue'
 import { ATTR_MARK, ATTR_TOKEN, CSS_IN_JS_INSTANCE, useStyleContext } from '../StyleContext'
+import { collectStyleText } from '../ssr/styleCollector'
 import { isClientSide, toStyleStr } from '../util'
 import { transformToken } from '../util/css-variables'
 import { useGlobalCache } from './useGlobalCache'
@@ -69,8 +70,14 @@ export default function useCSSVarRegister<V, T extends Record<string, V>>(
         removeCSS(styleId, { mark: ATTR_MARK, attachTo: styleContext.value.container })
       }
     },
-    ([, cssVarsStr, styleId]) => {
+    (cacheValue) => {
+      const [, cssVarsStr, styleId] = cacheValue
       if (!canUseDom()) {
+        const extracted = extract(cacheValue, {}, { plain: false })
+        if (extracted) {
+          const [, , styleText] = extracted
+          collectStyleText(styleText)
+        }
         return
       }
       if (!cssVarsStr) {
