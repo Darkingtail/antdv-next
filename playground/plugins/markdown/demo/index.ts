@@ -19,6 +19,40 @@ export function toRelativePath(absolutePath: string, root: string): string {
     : normalizedPath
 }
 
+/**
+ * 解析 demo 文件内容
+ */
+async function parseDemoFile(filePath: string, md: any) {
+  const code = await fs.readFile(filePath, 'utf-8')
+  const { descriptor } = parse(code, {
+    filename: filePath,
+    sourceMap: false,
+  })
+
+  const locales: Record<string, any> = {}
+  const docsBlock = descriptor.customBlocks.filter(block => block.type === 'docs')
+  await Promise.all(docsBlock?.map(async (block) => {
+    const lang = block.attrs.lang as string || 'zh-CN'
+    const env: any = {}
+    const content = block.content.trim()
+    const html = await md.renderAsync(content, env)
+    const title = env.formatters?.title ?? env?.title ?? ''
+    locales[lang] = {
+      html,
+      title,
+    }
+  }))
+
+  const sourceCode = code.replace(/<docs[^>]*>[\s\S]*?<\/docs>/g, '').trim()
+  const sourceHtml = await md.renderAsync(`\`\`\`vue\n${sourceCode}\n\`\`\``)
+
+  return {
+    locales,
+    sourceCode,
+    sourceHtml,
+  }
+}
+
 export function demoPlugin(): PluginOption {
   const md = createMarkdown()({
     withPlugin: false,
@@ -63,61 +97,70 @@ export function demoPlugin(): PluginOption {
       if (id.startsWith('\0') && id.includes(DEMO_SUFFIX)) {
         const virtualId = id.slice(1)
         const [filePath] = virtualId.split('?')
-        
+        const normalizedFile = normalizePath(filePath)
+
         // 建立文件依赖关系，确保源文件变化时虚拟模块会被重新加载
         this.addWatchFile(filePath)
-        
-        const code = await fs.readFile(filePath, 'utf-8')
-        const { descriptor } = parse(code, {
-          filename: filePath,
-          sourceMap: false,
-        })
-        const locales: Record<string, any> = {}
-        // 提取docsBlock的部分
-        const docsBlock = descriptor.customBlocks.filter(block => block.type === 'docs')
-        await Promise.all(docsBlock?.map(async (block) => {
-          // 获取标签的内容
-          const lang = block.attrs.lang as string || 'zh-CN'
-          const env: any = {}
-          const content = block.content.trim()
-          const html = await md.renderAsync(content, env)
-          // 提取标题内容
-          const title = env.formatters?.title ?? env?.title ?? ''
-          locales[lang] = {
-            html,
-            title,
-          }
-        }))
-        const sourceCode = code.replace(/<docs[^>]*>[\s\S]*?<\/docs>/g, '').trim()
-        const sourceHtml = await md.renderAsync(`\`\`\`vue\n${sourceCode}\n\`\`\``)
+
+        // 解析 demo 文件
+        const { locales, sourceCode, sourceHtml } = await parseDemoFile(filePath, md)
+
+        // 注入带 HMR 的代码
         return {
-          code: `export default { 
+          code: `
+import { ref } from 'vue'
+
+const localesRef = ref(${JSON.stringify(locales)})
+const sourceRef = ref(${JSON.stringify(sourceCode)})
+const htmlRef = ref(${JSON.stringify(sourceHtml)})
+
+const demoData = {
   component: () => import('${filePath}'),
-  locales: ${JSON.stringify(locales)},
-  source: ${JSON.stringify(sourceCode)},
-  html: ${JSON.stringify(sourceHtml)}
-}`,
+  get locales() { return localesRef.value },
+  get source() { return sourceRef.value },
+  get html() { return htmlRef.value }
+}
+
+// HMR 支持
+if (import.meta.hot) {
+  import.meta.hot.accept()
+  
+  import.meta.hot.on('demo-update:${normalizedFile.replace(/\\/g, '/')}', (data) => {
+    if (data.locales) localesRef.value = data.locales
+    if (data.source) sourceRef.value = data.source
+    if (data.html) htmlRef.value = data.html
+  })
+}
+
+export default demoData
+`,
           map: null,
         }
       }
     },
-    handleHotUpdate(ctx) {
+    async handleHotUpdate(ctx) {
       const relativePath = toRelativePath(ctx.file, ctx.server.config.root)
       const isDemo = DEMO_GLOB.some(pattern => pm.isMatch(relativePath, pattern))
       if (isDemo) {
         const normalizedFile = normalizePath(ctx.file)
         const server = ctx.server
-        const virtualFileName = `${normalizedFile}?${DEMO_SUFFIX}`
-        const virtualModuleId = `\0${virtualFileName}`
-        const virtualModule = server.moduleGraph.getModuleById(virtualModuleId)
 
-        if (virtualModule) {
-          // 使虚拟模块失效，触发客户端重新请求并调用 load 钩子
-          server.moduleGraph.invalidateModule(virtualModule)
-          
-          // 将虚拟模块加入更新列表，让 Vite 自动处理 HMR
-          return [...ctx.modules, virtualModule]
-        }
+        // 重新解析文件获取最新内容
+        const { locales, sourceCode, sourceHtml } = await parseDemoFile(ctx.file, md)
+
+        // 发送自定义 HMR 事件更新数据
+        server.ws.send({
+          type: 'custom',
+          event: `demo-update:${normalizedFile.replace(/\\/g, '/')}`,
+          data: {
+            locales,
+            source: sourceCode,
+            html: sourceHtml,
+          },
+        })
+
+        // 只返回原始 Vue 文件模块，让 Vue 的 HMR 处理组件更新
+        return ctx.modules
       }
     },
   }
