@@ -1,3 +1,11 @@
+<docs lang="zh-CN">
+设置对话框加载状态。
+</docs>
+
+<docs lang="en-US">
+Set the loading status of Modal.
+</docs>
+
 <script lang="ts" setup>
 import { ref } from 'vue'
 

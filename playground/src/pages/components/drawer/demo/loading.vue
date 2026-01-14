@@ -1,3 +1,11 @@
+<docs lang="zh-CN">
+设置抽屉加载状态。
+</docs>
+
+<docs lang="en-US">
+Set the loading status of Drawer.
+</docs>
+
 <script setup lang="ts">
 import { shallowRef } from 'vue'
 

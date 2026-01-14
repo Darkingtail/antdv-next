@@ -1,3 +1,11 @@
+<docs lang="zh-CN">
+自定义抽屉的关闭按钮位置，放到右侧，默认为左侧。
+</docs>
+
+<docs lang="en-US">
+Drawer with closable placement, customize the close placement to the `end`, defaults to `start`.
+</docs>
+
 <script setup lang="ts">
 import { shallowRef } from 'vue'
 

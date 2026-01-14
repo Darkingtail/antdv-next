@@ -1,3 +1,11 @@
+<docs lang="zh-CN">
+可调整大小的抽屉，允许通过拖拽边缘来调整抽屉的宽度或高度。
+</docs>
+
+<docs lang="en-US">
+Resizable drawer that allows users to adjust the drawer's width or height by dragging the edge.
+</docs>
+
 <script setup lang="ts">
 import type { DrawerProps, RadioChangeEvent } from 'antdv-next'
 import { shallowRef } from 'vue'

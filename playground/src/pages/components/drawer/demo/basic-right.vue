@@ -1,3 +1,11 @@
+<docs lang="zh-CN">
+基础抽屉，点击触发按钮抽屉从右滑出，点击遮罩区关闭。
+</docs>
+
+<docs lang="en-US">
+Basic drawer.
+</docs>
+
 <script setup lang="ts">
 import { shallowRef } from 'vue'
 

@@ -1,3 +1,11 @@
+<docs lang="zh-CN">
+遮罩效果，默认 `blur`。
+</docs>
+
+<docs lang="en-US">
+mask effect, default `blur`.
+</docs>
+
 <script setup lang="ts">
 import { shallowRef } from 'vue'
 

@@ -1,3 +1,11 @@
+<docs lang="zh-CN">
+通过 `mask={false}` 去掉遮罩。
+</docs>
+
+<docs lang="en-US">
+Remove mask.
+</docs>
+
 <script setup lang="ts">
 import { shallowRef } from 'vue'
 

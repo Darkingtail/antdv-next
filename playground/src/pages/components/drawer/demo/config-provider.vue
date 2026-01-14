@@ -1,3 +1,11 @@
+<docs lang="zh-CN">
+支持 ConfigProvider 配置。
+</docs>
+
+<docs lang="en-US">
+config by ConfigProvider.
+</docs>
+
 <script setup lang="ts">
 import { shallowRef } from 'vue'
 

@@ -1,3 +1,11 @@
+<docs lang="zh-CN">
+自定义页脚渲染函数，支持在原有基础上进行扩展。
+</docs>
+
+<docs lang="en-US">
+Customize the footer rendering function to support extensions on top of the original.
+</docs>
+
 <script setup lang="ts">
 import { Button, Modal } from 'antdv-next'
 import { h, ref } from 'vue'
