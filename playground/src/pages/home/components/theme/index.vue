@@ -12,6 +12,7 @@ import { theme } from 'antdv-next'
 import { AggregationColor } from 'antdv-next/color-picker/color'
 import { storeToRefs } from 'pinia'
 import { computed, h, reactive, ref, watch } from 'vue'
+import logo from '@/assets/antdv-next.svg'
 import { useAppStore } from '@/stores/app.ts'
 import Group from '../group/index.vue'
 import BackgroundImage from './background-image.vue'
@@ -355,14 +356,14 @@ function handleFormChange(changedValues: Partial<ThemeData>) {
               <div class="antdv-theme-logo-img">
                 <img
                   draggable="false"
-                  src="https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg"
+                  :src="logo"
                   :style="{
                     filter: closestColor === DEFAULT_COLOR ? undefined : rgbToColorMatrix(logoColor),
                   }"
-                  alt="antd logo"
+                  alt="antdv logo"
                 >
               </div>
-              <h1>Ant Design</h1>
+              <h1>Antdv Next</h1>
             </div>
             <a-flex class="antdv-theme-menu" gap="middle">
               <BellOutlined />
