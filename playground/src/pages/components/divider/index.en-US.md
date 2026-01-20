@@ -13,13 +13,12 @@ group:
 
 <DocHeading></DocHeading>
 
-## When To Use {#when-to-use}
+## When To Use
 
 - Divide sections of an article.
 - Divide inline text and links such as the operation column of table.
 
-## Examples {#examples}
-
+## Examples
 <demo-group>
   <demo src="./demo/horizontal.vue">Horizontal</demo>
   <demo src="./demo/with-text.vue">Divider with title</demo>
@@ -33,7 +32,7 @@ group:
 
 ## API
 
-### Property {#property}
+### Props
 
 Common props ref：[Common props](/docs/vue/common-props)
 
@@ -48,12 +47,6 @@ Common props ref：[Common props](/docs/vue/common-props)
 | vertical | Orientation, Simultaneously configure with `orientation` and prioritize `orientation` | boolean | false |
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-dom), string&gt; \| (info: &#123; props &#125;) =&gt; Record&lt;[SemanticDOM](#semantic-dom), string&gt; | - |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; \| (info: &#123; props &#125;) =&gt; Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; | - |
-
-### Slots {#slots}
-
-| Name | Description |
-| --- | --- |
-| default | The wrapped title |
 
 ## Semantic DOM {#semantic-dom}
 

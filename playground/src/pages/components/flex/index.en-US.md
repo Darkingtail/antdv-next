@@ -9,7 +9,7 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*obM7S5lIxeMAAA
 
 <DocHeading></DocHeading>
 
-## When To Use {#when-to-use}
+## When To Use
 
 - Good for setting spacing between elements.
 - Suitable for setting various horizontal and vertical alignments.
@@ -19,7 +19,7 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*obM7S5lIxeMAAA
 - Space is used to set the spacing between inline elements. It will add a wrapper element for each child element for inline alignment. Suitable for equidistant arrangement of multiple child elements in rows and columns.
 - Flex is used to set the layout of block-level elements. It does not add a wrapper element. Suitable for layout of child elements in vertical or horizontal direction, and provides more flexibility and control.
 
-## Examples {#examples}
+## Examples
 
 <demo-group>
   <demo src="./demo/basic.vue">basic</demo>
@@ -31,7 +31,7 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*obM7S5lIxeMAAA
 
 ## API
 
-### Property {#property}
+### Props
 
 Common props ref：[Common props](/docs/vue/common-props)
 

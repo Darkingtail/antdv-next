@@ -11,11 +11,11 @@ demo:
 
 <DocHeading></DocHeading>
 
-## When To Use {#when-to-use}
+## When To Use
 
 When there are more than a few options to choose from, you can wrap them in a `Dropdown`. By hovering or clicking on the trigger, a dropdown menu will appear, which allows you to choose an option and execute the relevant action.
 
-## Examples {#examples}
+## Examples
 
 <demo-group>
   <demo src="./demo/basic.vue">Basic</demo>
@@ -38,7 +38,7 @@ When there are more than a few options to choose from, you can wrap them in a `D
 
 ## API
 
-### Property {#property}
+### Props
 
 Common props ref：[Common props](/docs/vue/common-props)
 
@@ -65,14 +65,14 @@ Common props ref：[Common props](/docs/vue/common-props)
 | openClassName | Class added to trigger when dropdown is open | string | - | - |
 | autoAdjustOverflow | Whether to adjust dropdown placement automatically when dropdown is off screen | boolean \| AdjustOverflow | true | - |
 
-### Events {#events}
+### Events
 
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
 | openChange | Called when the open state is changed. Not trigger when hidden by click item | (open: boolean, info: &#123; source: 'trigger' \| 'menu' &#125;) =&gt; void | - |
 | menuClick | Callback when menu item clicked | MenuEmits['click'] | - |
 
-### Slots {#slots}
+### Slots
 
 | Slot        | Description             | Type                      | Version |
 |-------------|-------------------------|---------------------------| --- |
@@ -81,11 +81,11 @@ Common props ref：[Common props](/docs/vue/common-props)
 
 Dropdown also supports Menu slots (such as `labelRender`) via the Dropdown slots.
 
-## Note {#note}
+## Note
 
 Please ensure that the child node of `Dropdown` accepts `mouseenter`, `mouseleave`, `focus`, `click` events.
 
-## Semantic DOM {#semantic-dom}
+## Semantic DOM
 
 | Name | Description |
 | --- | --- |
@@ -95,7 +95,7 @@ Please ensure that the child node of `Dropdown` accepts `mouseenter`, `mouseleav
 | itemIcon | Menu item icon |
 | itemContent | Menu item content |
 
-## Design Token {#design-token}
+## Design Token
 
 See [Customize Theme](/docs/vue/customize-theme) to learn how to use Design Token.
 

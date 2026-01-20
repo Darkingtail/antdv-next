@@ -9,12 +9,12 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*obM7S5lIxeMAAA
 
 <DocHeading></DocHeading>
 
-## When To Use {#when-to-use}
+## When To Use
 
 - When there is no data provided, display for friendly tips.
 - User tutorial to create something in a fresh new situation.
 
-## Examples {#examples}
+## Examples
 
 <demo-group>
   <demo src="./demo/basic.vue">Basic</demo>
@@ -27,9 +27,9 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*obM7S5lIxeMAAA
 
 ## API
 
-### Property {#property}
-
 Common props ref：[Common props](/docs/vue/common-props)
+
+### Props
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -40,7 +40,7 @@ Common props ref：[Common props](/docs/vue/common-props)
 | rootClass | Root container class | string | - | - |
 | prefixCls | Prefix class name | string | - | - |
 
-### Slots {#slots}
+### Slots
 
 | Slot | Description | Type | Version |
 | --- | --- | --- | --- |

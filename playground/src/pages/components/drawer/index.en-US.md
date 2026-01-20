@@ -11,7 +11,7 @@ demo:
 
 <DocHeading></DocHeading>
 
-## When To Use {#when-to-use}
+## When To Use
 
 A Drawer is a panel that is typically overlaid on top of a page and slides in from the side. It contains a set of information or actions. Since the user can interact with the Drawer without leaving the current page, tasks can be achieved more efficiently within the same context.
 
@@ -23,7 +23,7 @@ A Drawer is a panel that is typically overlaid on top of a page and slides in fr
 >
 > The `loading` prop renders Skeleton in Drawer.
 
-## Examples {#examples}
+## Examples
 
 <demo-group>
   <demo src="./demo/basic-right.vue">Basic</demo>
@@ -43,7 +43,7 @@ A Drawer is a panel that is typically overlaid on top of a page and slides in fr
 
 ## API
 
-### Property {#property}
+### Props
 
 Common props ref：[Common props](/docs/vue/common-props)
 
@@ -74,7 +74,7 @@ Common props ref：[Common props](/docs/vue/common-props)
 | open | Whether the Drawer dialog is visible or not | boolean | false | - |
 | zIndex | The `z-index` of the Drawer | number | 1000 | - |
 
-### Events {#events}
+### Events
 
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
@@ -87,7 +87,7 @@ Common props ref：[Common props](/docs/vue/common-props)
 | mouseover | Mouse over event | (e: MouseEvent) => void | - |
 | click | Click event | (e: MouseEvent) => void | - |
 
-### Slots {#slots}
+### Slots
 
 | Slot | Description | Type | Version |
 | --- | --- | --- | --- |
@@ -97,7 +97,9 @@ Common props ref：[Common props](/docs/vue/common-props)
 | closeIcon | Custom close icon | () => any | - |
 | default | Drawer content | () => any | - |
 
-### ResizableConfig {#resizableconfig}
+## Types
+
+### ResizableConfig
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |

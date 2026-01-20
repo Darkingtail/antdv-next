@@ -9,17 +9,16 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*d27AQJrowGAAAA
 
 <DocHeading></DocHeading>
 
-## When To Use {#when-to-use}
+## When To Use
 
-## Examples {#examples}
+## Examples
 
 <demo-group>
 </demo-group>
 
 ## API
 
-### Property {#property}
-
+### Props
 Common props ref：[Common props](/docs/vue/common-props)
 
 | Property | Description | Type | Default | Version |
@@ -38,7 +37,7 @@ Common props ref：[Common props](/docs/vue/common-props)
 | items | Describe the contents of the list item | DescriptionsItemType[] | - | 5.8.0 |
 | id | - | string | - | - |
 
-### Slots {#slots}
+### Slots
 
 | Slot | Description | Type | Version |
 | --- | --- | --- | --- |

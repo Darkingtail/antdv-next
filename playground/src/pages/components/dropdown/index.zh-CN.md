@@ -19,7 +19,7 @@ demo:
 - 用于收罗一组命令操作。
 - Select 用于选择，而 Dropdown 是命令集合。
 
-## 示例 {#examples}
+## 代码演示 {#examples}
 
 <demo-group>
   <demo src="./demo/basic.vue">基本</demo>
@@ -42,9 +42,9 @@ demo:
 
 ## API
 
-### 属性 {#property}
-
 通用属性参考：[通用属性](/docs/vue/common-props)
+
+### 属性 {#props}
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
@@ -89,7 +89,7 @@ Dropdown 会透传 Menu 的插槽（例如 `labelRender`）。
 
 请确保 `Dropdown` 的子元素能接受 `mouseenter`、`mouseleave`、`focus`、`click` 事件。
 
-## Semantic DOM {#semantic-dom}
+## 语义化 DOM {#semantic-dom}
 
 | 名称 | 说明 |
 | --- | --- |
@@ -100,7 +100,6 @@ Dropdown 会透传 Menu 的插槽（例如 `labelRender`）。
 | itemContent | 菜单项内容 |
 
 ## 主题变量（Design Token）{#design-token}
-
 
 参考 [定制主题](/docs/vue/customize-theme) 了解如何使用主题变量。
 

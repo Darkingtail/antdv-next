@@ -11,12 +11,12 @@ demo:
 
 <DocHeading></DocHeading>
 
-## When To Use {#when-to-use}
+## When To Use
 
 - For global functionality on the site.
 - Buttons that can be seen wherever you browse.
 
-## Examples {#examples}
+## Examples
 
 <demo-group>
   <demo src="./demo/basic.vue" iframe="360">Basic</demo>
@@ -35,11 +35,11 @@ demo:
 
 ## API
 
-### Property {#property}
-
 Common props ref：[Common props](/docs/vue/common-props)
 
-#### FloatButtonGroup
+### FloatButtonGroup
+
+#### Props {#floatbuttongroup-props}
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -51,7 +51,24 @@ Common props ref：[Common props](/docs/vue/common-props)
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-dom), string&gt; \| (info: &#123; props &#125;)=&gt; Record&lt;[SemanticDOM](#semantic-dom), string&gt; | - | - |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; \| (info: &#123; props &#125;)=&gt; Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; | - | - |
 
-#### FloatButton
+#### Events {#floatbuttongroup-events}
+
+| Event | Description | Type | Version |
+| --- | --- | --- | --- |
+| update:open | Callback executed when active menu is changed, use it with trigger | (open: boolean) =&gt; void | - |
+| click | Set the handler to handle `click` event (only work in Menu mode) | (e: MouseEvent) =&gt; void | - |
+
+#### Slots {#floatbuttongroup-slots}
+
+| Slot | Description | Type | Version |
+| --- | --- | --- | --- |
+| default | Children buttons content | () =&gt; any | - |
+| icon | Icon of trigger button | () =&gt; any | - |
+| closeIcon | Customize close button icon | () =&gt; any | - |
+
+### FloatButton
+
+#### Props {#floatbutton-props}
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -68,7 +85,23 @@ Common props ref：[Common props](/docs/vue/common-props)
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-dom), string&gt; \| (info: &#123; props &#125;)=&gt; Record&lt;[SemanticDOM](#semantic-dom), string&gt; | - | - |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; \| (info: &#123; props &#125;)=&gt; Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; | - | - |
 
-#### FloatButton.BackTop
+#### Events {#floatbutton-events}
+
+| Event | Description | Type | Version |
+| --- | --- | --- | --- |
+| click | Set the handler to handle `click` event | (e: MouseEvent) =&gt; void | - |
+
+#### Slots {#floatbutton-slots}
+
+| Slot | Description | Type | Version |
+| --- | --- | --- | --- |
+| default | Button content | () =&gt; any | - |
+| icon | Set the icon component of button | () =&gt; any | - |
+| tooltip | The text shown in the tooltip | (props?: TooltipProps) =&gt; any | - |
+
+### FloatBackTop {#floatbacktop}
+
+#### Props {#floatbacktop-props}
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -83,49 +116,16 @@ Common props ref：[Common props](/docs/vue/common-props)
 | classes | Customize class for each semantic structure inside the component. Supports object or function. | FloatButtonClassNamesType | - | - |
 | styles | Customize inline style for each semantic structure inside the component. Supports object or function. | FloatButtonStylesType | - | - |
 
-### Events {#events}
-
-#### FloatButton
-
-| Event | Description | Type | Version |
-| --- | --- | --- | --- |
-| click | Set the handler to handle `click` event | (e: MouseEvent) =&gt; void | - |
-
-#### FloatButtonGroup
-
-| Event | Description | Type | Version |
-| --- | --- | --- | --- |
-| update:open | Callback executed when active menu is changed, use it with trigger | (open: boolean) =&gt; void | - |
-| click | Set the handler to handle `click` event (only work in Menu mode) | (e: MouseEvent) =&gt; void | - |
-
-#### FloatButton.BackTop
+#### Events {#floatbacktop-events}
 
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
 | click | A callback function, which can be executed when you click the button | () =&gt; void | - |
 
-### Slots {#slots}
-
-#### FloatButton
-
-| Slot | Description | Type | Version |
-| --- | --- | --- | --- |
-| default | Button content | () =&gt; any | - |
-| icon | Set the icon component of button | () =&gt; any | - |
-| tooltip | The text shown in the tooltip | (props?: TooltipProps) =&gt; any | - |
-
-#### FloatButtonGroup
-
-| Slot | Description | Type | Version |
-| --- | --- | --- | --- |
-| default | Children buttons content | () =&gt; any | - |
-| icon | Icon of trigger button | () =&gt; any | - |
-| closeIcon | Customize close button icon | () =&gt; any | - |
-
 ## Semantic DOM
 
 Refer to [Semantic DOM](#semantic-dom) for detailed semantic structure information.
 
-## Design Token {#design-token}
+## Design Token
 
 See [Customize Theme](/docs/vue/customize-theme) to learn how to use Design Token.

@@ -15,7 +15,7 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*obM7S5lIxeMAAA
 - 当目前没有数据时，用于显式的用户提示。
 - 初始化场景时的引导创建。
 
-## 示例 {#examples}
+## 代码演示 {#examples}
 
 <demo-group>
   <demo src="./demo/basic.vue">基础用法</demo>
@@ -28,7 +28,7 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*obM7S5lIxeMAAA
 
 ## API
 
-### 属性 {#property}
+### 属性 {#props}
 
 通用属性参考：[通用属性](/docs/vue/common-props)
 

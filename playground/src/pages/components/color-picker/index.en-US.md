@@ -37,9 +37,9 @@ Used when the user needs to make a customized color selection.
 
 ## API
 
-### Property {#property}
-
 Common props ref：[Common props](/docs/vue/common-props)
+
+### Props
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -67,7 +67,7 @@ Common props ref：[Common props](/docs/vue/common-props)
 | trigger | ColorPicker trigger mode | TriggerType | `click` | - |
 | value | Value of color | [ColorValueType](#colorvaluetype) | - | - |
 
-### Events {#events}
+### Events
 
 | Event | Description | Type | Version |
 | --- | --- | --- | --- |
@@ -77,7 +77,7 @@ Common props ref：[Common props](/docs/vue/common-props)
 | openChange | Callback when `open` is changed | (open: boolean) => void | - |
 | formatChange | Callback when `format` is changed | (format?: ColorFormatType) => void | - |
 
-### Slots {#slots}
+### Slots
 
 | Slot | Description | Type | Version |
 | --- | --- | --- | --- |
@@ -85,20 +85,22 @@ Common props ref：[Common props](/docs/vue/common-props)
 | panelRender | Custom Render Panel | (params: &#123; panel: any, extra: &#123; components: &#123; Picker: any, Presets: any &#125; &#125; &#125;) => any | - |
 | showText | Custom text rendering | (params: &#123; color: Color &#125;) => any | - |
 
-#### ColorValueType {#colorvaluetype}
+## Types
+
+#### ColorValueType
 
 ```ts
-type ColorValueType =
-  | string
-  | Color
-  | { color: string | Color; percent: number }[]
-  | null
+type ColorValueType
+  = | string
+    | Color
+    | { color: string | Color, percent: number }[]
+    | null
 ```
 
-#### PresetsItem {#presetsitem}
+#### PresetsItem
 
 ```ts
-type PresetsItem = {
+interface PresetsItem {
   label: VueNode
   colors: ColorValueType[]
   defaultOpen?: boolean
@@ -106,7 +108,7 @@ type PresetsItem = {
 }
 ```
 
-### Color {#color}
+### Color
 
 | Property | Description | Type | Version |
 | --- | --- | --- | --- |

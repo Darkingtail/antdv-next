@@ -36,13 +36,13 @@ demo:
 
 ## API
 
-### 属性 {#property}
-
 通用属性参考：[通用属性](/docs/vue/common-props)
 
-#### FloatButtonGroup
+### FloatButtonGroup
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+#### 属性 {#floatbuttongroup-props}
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | shape | 设置包含的 FloatButton 按钮形状 | `circle` \| `square` | `circle` | - |
 | trigger | 触发方式（有触发方式为菜单模式） | `click` \| `hover` | - | - |
@@ -52,9 +52,26 @@ demo:
 | classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | Record&lt;[SemanticDOM](#semantic-dom), string&gt; \| (info: &#123; props &#125;)=&gt; Record&lt;[SemanticDOM](#semantic-dom), string&gt; | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; \| (info: &#123; props &#125;)=&gt; Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; | - | - |
 
-#### FloatButton
+#### 事件 {#floatbuttongroup-events}
 
-| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| 事件 | 说明 | 类型 | 版本 |
+| --- | --- | --- | --- |
+| update:open | 展开收起时的回调，需配合 trigger 一起使用 | (open: boolean) =&gt; void | - |
+| click | 点击按钮时的回调（仅在菜单模式中有效） | (e: MouseEvent) =&gt; void | - |
+
+#### 插槽 {#floatbuttongroup-slots}
+
+| 插槽 | 说明 | 类型 | 版本 |
+| --- | --- | --- | --- |
+| default | 子按钮内容 | () =&gt; any | - |
+| icon | 触发按钮的图标 | () =&gt; any | - |
+| closeIcon | 自定义关闭按钮 | () =&gt; any | - |
+
+### FloatButton
+
+#### 属性 {#floatbutton-props}
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
 | icon | 自定义图标 | VueNode | - | - |
 | content | 文字及其它内容 | VueNode | - | - |
@@ -69,38 +86,13 @@ demo:
 | classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | Record&lt;[SemanticDOM](#semantic-dom), string&gt; \| (info: &#123; props &#125;)=&gt; Record&lt;[SemanticDOM](#semantic-dom), string&gt; | - | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; \| (info: &#123; props &#125;)=&gt; Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; | - | - |
 
-#### FloatButton.BackTop
-
-| 属性             | 说明                               | 类型              | 默认值       | 版本 |
-| ---------------- | ---------------------------------- | ----------------- | ------------ | ---- |
-| duration         | 回到顶部所需时间（ms）             | number            | 450          | -    |
-| target           | 设置需要监听其滚动事件的元素       | () =&gt; HTMLElement | () =&gt; window | -    |
-| visibilityHeight | 滚动高度达到此参数值才出现 BackTop | number            | 400          | -    |
-
-### 事件 {#events}
-
-#### FloatButton
+#### 事件 {#floatbutton-events}
 
 | 事件 | 说明 | 类型 | 版本 |
 | --- | --- | --- | --- |
 | click | 点击按钮时的回调 | (e: MouseEvent) =&gt; void | - |
 
-#### FloatButtonGroup
-
-| 事件 | 说明 | 类型 | 版本 |
-| --- | --- | --- | --- |
-| update:open | 展开收起时的回调，需配合 trigger 一起使用 | (open: boolean) =&gt; void | - |
-| click | 点击按钮时的回调（仅在菜单模式中有效） | (e: MouseEvent) =&gt; void | - |
-
-#### FloatButton.BackTop
-
-| 事件 | 说明 | 类型 | 版本 |
-| --- | --- | --- | --- |
-| click | 点击按钮的回调函数 | () =&gt; void | - |
-
-### 插槽 {#slots}
-
-#### FloatButton
+#### 插槽 {#floatbutton-slots}
 
 | 插槽 | 说明 | 类型 | 版本 |
 | --- | --- | --- | --- |
@@ -108,13 +100,28 @@ demo:
 | icon | 自定义图标 | () =&gt; any | - |
 | tooltip | 气泡卡片的内容 | (props?: TooltipProps) =&gt; any | - |
 
-#### FloatButtonGroup
+### FloatBackTop {#floatbacktop}
 
-| 插槽 | 说明 | 类型 | 版本 |
+#### 属性 {#floatbacktop-props}
+
+| 参数 | 说明 | 类型 | 默认值 | 版本 |
+| --- | --- | --- | --- | --- |
+| duration | 回到顶部所需时间（ms） | number | 450 | - |
+| target | 设置需要监听其滚动事件的元素 | () =&gt; HTMLElement | () =&gt; window | - |
+| visibilityHeight | 滚动高度达到此参数值才出现 BackTop | number | 400 | - |
+| target | 相当于 a 标签的 target 属性，href 存在时生效 | '_self' \| '_blank' \| '_parent' \| '_top' \| string | - | - |
+| badge | 带徽标数字的悬浮按钮（不支持 `status` 以及相关属性） | FloatButtonBadgeProps & &#123; class?: string &#125; | - | 5.4.0 |
+| htmlType | 设置 `button` 原生的 `type` 值，可选值请参考 [HTML 标准](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button#type) | ButtonHTMLType | `button` | 5.21.0 |
+| ariaLabel | - | string | - | - |
+| style | - | CSSProperties | - | - |
+| classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | FloatButtonClassNamesType | - | - |
+| styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | FloatButtonStylesType | - | - |
+
+#### 事件 {#floatbacktop-events}
+
+| 事件 | 说明 | 类型 | 版本 |
 | --- | --- | --- | --- |
-| default | 子按钮内容 | () =&gt; any | - |
-| icon | 触发按钮的图标 | () =&gt; any | - |
-| closeIcon | 自定义关闭按钮 | () =&gt; any | - |
+| click | 点击按钮的回调函数 | () =&gt; void | - |
 
 ## Semantic DOM
 

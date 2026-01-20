@@ -24,7 +24,7 @@ demo:
 >
 > `loading` 属性会在抽屉中渲染 Skeleton。
 
-## 示例 {#examples}
+## 代码演示 {#examples}
 
 <demo-group>
   <demo src="./demo/basic-right.vue">基本</demo>
@@ -44,7 +44,7 @@ demo:
 
 ## API
 
-### 属性 {#property}
+### 属性 {#props}
 
 通用属性参考：[通用属性](/docs/vue/common-props)
 
@@ -97,6 +97,8 @@ demo:
 | extra | 右上角额外操作 | () => any | - |
 | closeIcon | 自定义关闭图标 | () => any | - |
 | default | 抽屉内容 | () => any | - |
+
+## 类型 {#types}
 
 ### ResizableConfig {#resizableconfig}
 

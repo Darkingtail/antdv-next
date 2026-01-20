@@ -9,11 +9,11 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*YC4ERpGAddoAAA
 
 <DocHeading></DocHeading>
 
-## When To Use {#when-to-use}
+## When To Use
 
 Provide global configuration for components, such as locale, direction, size, theme, or wave effect.
 
-## Usage {#usage}
+## Usage
 
 This component provides a configuration to all Vue components underneath itself via provide/inject.
 
@@ -37,7 +37,7 @@ Some components use dynamic style to support wave effect. You can config `csp` p
 </template>
 ```
 
-## Examples {#examples}
+## Examples
 
 <demo-group>
   <demo src="./demo/locale.vue">Locale</demo>
@@ -51,9 +51,9 @@ Some components use dynamic style to support wave effect. You can config `csp` p
 
 ## API
 
-### Property {#property}
-
 Common props ref：[Common props](/docs/vue/common-props)
+
+### Props
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |
@@ -74,7 +74,7 @@ Common props ref：[Common props](/docs/vue/common-props)
 | virtual | Disable virtual scroll when set to `false` | boolean | - | - |
 | warning | Config warning level, when `strict` is `false`, it will aggregate deprecated information into a single message | WarningContextProps | - | - |
 
-### Slots {#slots}
+### Slots
 
 | Slot | Description | Type | Version |
 | --- | --- | --- | --- |
@@ -117,7 +117,7 @@ const { componentDisabled, componentSize } = config.value
 | componentDisabled | antd component disabled state | boolean | - | - |
 | componentSize | antd component size state | `small` \| `middle` \| `large` | - | - |
 
-### Component Config {#component-config}
+### Component Config
 
 | Property | Description | Type | Default | Version |
 | --- | --- | --- | --- | --- |

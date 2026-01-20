@@ -59,7 +59,7 @@ demo:
 - DatePicker[picker="quarter"] (4.1.0 新增)
 - RangePicker
 
-### 国际化配置
+### 国际化配置 {#localization}
 
 默认配置为 en-US，如果你需要设置其他语言，推荐在入口处使用我们提供的国际化组件，详见：[ConfigProvider](/components/config-provider/)。
 
@@ -86,7 +86,7 @@ dayjs.locale('zh-cn')
 在搭配 Next.js 的 App Router 使用时，注意在引入 dayjs 的 locale 文件时加上 `'use client'`。这是由于 Ant Design 的组件都是客户端组件，在 RSC 中引入 dayjs 的 locale 文件将不会在客户端生效。
 :::
 
-### 共同的 API
+### 共同的 API {#common-api}
 
 以下 API 为 DatePicker、RangePicker 共享的 API。
 
@@ -130,7 +130,7 @@ dayjs.locale('zh-cn')
 | superPrevIcon | 自定义 `<<` 切换图标 | VueNode | - | - |
 | variant | 形态变体 | `outlined` \| `borderless` \| `filled` \| `underlined` | `outlined` | - |
 
-### 共同的方法
+### 共同的方法 {#common-methods}
 
 | 名称 | 描述 | 版本 |
 | --- | --- | --- |
@@ -155,7 +155,7 @@ dayjs.locale('zh-cn')
 | showWeek | DatePicker 下展示当前周 | boolean | false | - |
 | value | 日期 | [dayjs](https://day.js.org/) | - | - |
 
-### DatePicker[picker=year]
+### DatePicker[picker=year] {#date-picker-picker-year}
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
@@ -165,7 +165,7 @@ dayjs.locale('zh-cn')
 | renderExtraFooter | 在面板中添加额外的页脚 | () => VueNode | - | - |
 | value | 日期 | [dayjs](https://day.js.org/) | - | - |
 
-### DatePicker[picker=quarter]
+### DatePicker[picker=quarter] {#date-picker-picker-quarter}
 
 `4.1.0` 新增。
 
@@ -177,7 +177,7 @@ dayjs.locale('zh-cn')
 | renderExtraFooter | 在面板中添加额外的页脚 | () => VueNode | - | - |
 | value | 日期 | [dayjs](https://day.js.org/) | - | - |
 
-### DatePicker[picker=month]
+### DatePicker[picker=month] {#date-picker-picker-month}
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
@@ -187,7 +187,7 @@ dayjs.locale('zh-cn')
 | renderExtraFooter | 在面板中添加额外的页脚 | () => VueNode | - | - |
 | value | 日期 | [dayjs](https://day.js.org/) | - | - |
 
-### DatePicker[picker=week]
+### DatePicker[picker=week] {#date-picker-picker-week}
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
@@ -223,19 +223,19 @@ dayjs.locale('zh-cn')
 #### formatType
 
 ```typescript
-import type { Dayjs } from 'dayjs';
+import type { Dayjs } from 'dayjs'
 
-type Generic = string;
-type GenericFn = (value: Dayjs) => string;
+type Generic = string
+type GenericFn = (value: Dayjs) => string
 
-export type FormatType =
-  | Generic
-  | GenericFn
-  | Array<Generic | GenericFn>
-  | {
-      format: string;
-      type?: 'mask';
-    };
+export type FormatType
+  = | Generic
+    | GenericFn
+    | Array<Generic | GenericFn>
+    | {
+      format: string
+      type?: 'mask'
+    }
 ```
 
 ### 事件 {#events}
@@ -300,16 +300,16 @@ DatePicker 在 v4 默认将 `locale` 设置为 `en`，你可以通过 DatePicker
 - Example: <https://codesandbox.io/s/dayjs-day-of-week-x9tuj2?file=/demo.tsx>
 
 ```js
-import dayjs from 'dayjs';
+import dayjs from 'dayjs'
 
-import 'dayjs/locale/zh-cn';
+import updateLocale from 'dayjs/plugin/updateLocale'
 
-import updateLocale from 'dayjs/plugin/updateLocale';
+import 'dayjs/locale/zh-cn'
 
-dayjs.extend(updateLocale);
+dayjs.extend(updateLocale)
 dayjs.updateLocale('zh-cn', {
   weekStart: 0,
-});
+})
 ```
 
 ### 使用 `panelRender` 时为什么面板不会切换？ {#faq-panel-render-switch}

@@ -12,14 +12,14 @@ coverDark: https://mdn.alipayobjects.com/huamei_7uahnr/afts/img/A*d27AQJrowGAAAA
 
 ## 何时使用 {#when-to-use}
 
-## 示例 {#examples}
+## 代码演示 {#examples}
 
 <demo-group>
 </demo-group>
 
 ## API
 
-### 属性 {#property}
+### 属性 {#props}
 
 通用属性参考：[通用属性](/docs/vue/common-props)
 

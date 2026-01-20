@@ -19,7 +19,7 @@ group:
 - 对不同章节的文本段落进行分割。
 - 对行内文字/链接进行分割，例如表格的操作列。
 
-## 示例 {#examples}
+## 代码演示 {#examples}
 
 <demo-group>
   <demo src="./demo/horizontal.vue">水平分割线</demo>
@@ -34,7 +34,7 @@ group:
 
 ## API
 
-### 属性 {#property}
+### 属性 {#props}
 
 通用属性参考：[通用属性](/docs/vue/common-props)
 
@@ -50,13 +50,7 @@ group:
 | classes | 用于自定义组件内部各语义化结构的 class，支持对象或函数 | Record&lt;[SemanticDOM](#semantic-dom), string&gt; \| (info: &#123; props &#125;) =&gt; Record&lt;[SemanticDOM](#semantic-dom), string&gt; | - |
 | styles | 用于自定义组件内部各语义化结构的行内 style，支持对象或函数 | Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; \| (info: &#123; props &#125;) =&gt; Record&lt;[SemanticDOM](#semantic-dom), CSSProperties&gt; | - |
 
-### 插槽 {#slots}
-
-| 名称 | 说明 |
-| --- | --- |
-| default | 嵌套的标题 |
-
-## Semantic DOM {#semantic-dom}
+## 语义化 DOM 结构 {#semantic-dom}
 
 容器元素及其各个子元素的类名和 style。
 

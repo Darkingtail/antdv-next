@@ -38,7 +38,7 @@ ConfigProvider 使用 Vue 的 provide/inject 特性，只需在应用外围包�
 </template>
 ```
 
-## 示例 {#examples}
+## 代码演示 {#examples}
 
 <demo-group>
   <demo src="./demo/locale.vue">国际化</demo>
@@ -52,9 +52,9 @@ ConfigProvider 使用 Vue 的 provide/inject 特性，只需在应用外围包�
 
 ## API
 
-### 属性 {#property}
-
 通用属性参考：[通用属性](/docs/vue/common-props)
+
+### 属性 {#props}
 
 | 属性 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |

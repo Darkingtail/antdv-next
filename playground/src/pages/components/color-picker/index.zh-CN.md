@@ -17,7 +17,7 @@ group:
 
 当用户需要自定义颜色选择的时候使用。
 
-## 示例 {#examples}
+## 代码演示 {#examples}
 
 <demo-group>
   <demo src="./demo/basic.vue">基本使用</demo>
@@ -38,9 +38,9 @@ group:
 
 ## API
 
-### 属性 {#property}
-
 通用属性参考：[通用属性](/docs/vue/common-props)
+
+### 属性 {#props}
 
 | 参数 | 说明 | 类型 | 默认值 | 版本 |
 | --- | --- | --- | --- | --- |
@@ -86,20 +86,22 @@ group:
 | panelRender | 自定义渲染面板 | (params: &#123; panel: any, extra: &#123; components: &#123; Picker: any, Presets: any &#125; &#125; &#125;) => any | - |
 | showText | 自定义文字渲染 | (params: &#123; color: Color &#125;) => any | - |
 
-#### ColorValueType {#colorvaluetype}
+## 类型 {#types}
+
+### ColorValueType
 
 ```ts
-type ColorValueType =
-  | string
-  | Color
-  | { color: string | Color; percent: number }[]
-  | null
+type ColorValueType
+  = | string
+    | Color
+    | { color: string | Color, percent: number }[]
+    | null
 ```
 
-#### PresetsItem {#presetsitem}
+### PresetsItem
 
 ```ts
-type PresetsItem = {
+interface PresetsItem {
   label: VueNode
   colors: ColorValueType[]
   defaultOpen?: boolean
@@ -107,7 +109,7 @@ type PresetsItem = {
 }
 ```
 
-### Color {#color}
+### Color
 
 | 参数 | 说明 | 类型 | 版本 |
 | --- | --- | --- | --- |
