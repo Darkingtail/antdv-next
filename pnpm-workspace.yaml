@@ -97,6 +97,7 @@ catalogs:
     '@v-c/color-picker': ^1.0.3
     '@v-c/dialog': ^0.0.4
     '@v-c/drawer': ^0.0.4
+    '@v-c/portal': ^1.0.5
     '@v-c/dropdown': ^1.0.1
     '@v-c/image': ^1.0.0
     '@v-c/input': ^1.0.1
