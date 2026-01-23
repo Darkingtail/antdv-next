@@ -11,11 +11,11 @@ import IconSearch from './components/icon-search/index.vue'
 import InstallDependencies from './components/install-dependencies/index.vue'
 import ComponentTokenTable from './components/token/component-token-table.vue'
 import 'antdv-next/style/reset.css'
+import './assets/antd.css'
 import 'uno.css'
 import './assets/styles/layout/index.css'
 import './assets/styles/markdown/index.css'
 import './assets/styles/common.css'
-import './assets/antd.css'
 
 const app = createApp(App)
 app.use(router)

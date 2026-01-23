@@ -128,7 +128,7 @@ const demoStyle = computed(() => {
   </section>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 .ant-doc-demo-box {
   @apply bg-container;
 
