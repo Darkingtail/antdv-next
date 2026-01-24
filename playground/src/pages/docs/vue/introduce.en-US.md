@@ -20,7 +20,7 @@ Following the Ant Design specification, we developed a Vue UI library `antdv-nex
 - 🌈 Enterprise-class UI designed for web applications.
 - 📦 A set of high-quality Vue3 components out of the box.
 - 🛡 Written in TypeScript with predictable static types.
-- ⚙️ Share the [Ant Design of React](https://ant.design/docs/resources-cn) design resource system.
+- ⚙️ Share the <a href="https://ant.design/docs/resources-cn" target="_blank" rel="noopener noreferrer">Ant Design of React</a> design resource system.
 - 🌍 Internationalization support for dozens of languages.
 - 🎨 Powerful theme customization in every detail.
 
