@@ -65,7 +65,6 @@ const themeConfig = computed(() => {
 watch(
   themeConfig,
   () => {
-    console.log()
     ;(ConfigProvider as any).config({
       theme: themeConfig.value,
     })
