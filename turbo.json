@@ -4,23 +4,27 @@
   "tasks": {
     "build:token": {
       "dependsOn": ["@antdv-next/cssinjs#build", "build:esm"],
-      "cache": false,
-      "outputs": []
+      "inputs": ["src/**", "package.json", "tsconfig.json"],
+      "outputs": ["../../playground/src/assets/token.json", "../../playground/src/assets/token-meta.json"]
     },
     "build:esm": {
       "dependsOn": ["^build:esm", "@antdv-next/icons#build"],
+      "inputs": ["src/**", "package.json", "tsconfig.json", "tsdown.config.ts"],
       "outputs": ["dist/**"]
     },
     "@antdv-next/icons#build": {
       "dependsOn": ["^build"],
+      "inputs": ["src/**", "package.json", "tsconfig.json", "tsdown.config.ts"],
       "outputs": ["dist/**"]
     },
     "@antdv-next/cssinjs#build": {
       "dependsOn": ["^build"],
+      "inputs": ["src/**", "package.json", "tsconfig.json", "tsdown.config.ts"],
       "outputs": ["dist/**"]
     },
     "build": {
       "dependsOn": ["antdv-next#build:token", "^build"],
+      "inputs": ["src/**", "package.json", "tsconfig.json"],
       "outputs": ["dist/**"]
     },
     "dev": {
