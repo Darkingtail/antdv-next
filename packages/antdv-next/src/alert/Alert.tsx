@@ -317,7 +317,7 @@ const Alert = defineComponent<
                   {isShowIcon
                     ? (
                         <IconNode
-                          class={clsx(`${prefixCls.value}-icon`, mergedClassNames.icon)}
+                          class={mergedClassNames.icon}
                           style={mergedStyles.icon}
                           description={description}
                           icon={props.icon}

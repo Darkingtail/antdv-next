@@ -87,7 +87,6 @@ describe('alert.Semantic', () => {
     const rootElement = wrapper.find('.ant-alert')
     const iconElement = wrapper.find('.ant-alert-icon')
     const titleElement = wrapper.find('.ant-alert-title')
-    console.log(rootElement.html(), 'rootElement.classes()')
 
     // Check merged classNames
     expect(rootElement.classes()).toContain('context-root')
