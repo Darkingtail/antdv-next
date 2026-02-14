@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Questions / 使用问题
+    url: https://github.com/antdv-next/antdv-next/discussions
+    about: 若为使用问题，请优先在 Discussions 提问（支持 English / 中文）。
+  - name: 📖 Documentation / 文档
+    url: https://antdv-next.com
+    about: 提交 Bug 之前请先查阅文档。

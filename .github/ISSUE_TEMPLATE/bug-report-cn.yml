@@ -1,0 +1,89 @@
+name: 🐞 Bug 反馈
+description: 提交一个 antdv-next 的 Bug
+labels: [unconfirmed]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你花时间提交 Bug！🙏
+
+        在创建 Issue 之前，请先确认：
+
+        - 已阅读项目 `README.md`
+        - 已查看文档站：https://antdv-next.com
+        - 已尝试官方示例或 Playground
+        - 如果是使用问题，请优先在 Discussions 提问
+
+        👉 推荐使用复现模板：
+        https://stackblitz.com/edit/vitejs-vite-stk21cho
+
+  - type: input
+    id: version
+    attributes:
+      label: antdv-next 版本
+      placeholder: 例如：1.0.3
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug 描述
+      description: |
+        请清晰描述你遇到的问题。
+        如果你计划提交 PR 修复，也可以在这里说明。
+      placeholder: 请输入 Bug 描述
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 复现方式
+      description: |
+        请提供一个最小可复现示例。
+
+        可以直接 Fork 这个模板：
+        https://stackblitz.com/edit/vitejs-vite-stk21cho
+
+        支持的平台：
+        - StackBlitz（推荐）
+        - CodeSandbox
+        - GitHub 仓库
+
+        为什么必须提供复现：
+        https://antfu.me/posts/why-reproductions-are-required-zh
+      placeholder: 复现链接或代码
+    validations:
+      required: true
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: 系统信息
+      description: |
+        请在终端执行以下命令，并粘贴完整输出：
+
+        ```bash
+        npx envinfo --system --binaries --browsers
+        ```
+
+        该信息可以帮助我们快速定位环境问题，例如 Node、包管理器或浏览器差异。
+      placeholder: 粘贴 envinfo 输出结果
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checkboxes
+    attributes:
+      label: 提交前确认
+      description: 在提交 Issue 之前，请确认以下内容
+      options:
+        - label: 我已阅读贡献指南（Contributing Guidelines）
+          required: true
+        - label: 我已搜索现有 Issue，确认没有重复问题
+          required: true
+        - label: 这是一个 Bug，而不是使用问题
+          required: true
+        - label: 我已提供最小可复现示例
+          required: true
