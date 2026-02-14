@@ -2,6 +2,64 @@
 title: 组件更新日志
 ---
 
+## V1.0.3
+
+本次版本以 **测试覆盖率提升、文档修复以及稳定性优化** 为主，同时同步了 antd v6.3.0，并对 css-in-js 进行了性能优化。
+
+**✨ 新功能 Features**
+
+* 同步 **antd v6.3.0** 并优化 css-in-js 性能（#163）
+* 支持 SSR，并为 ColorPicker / TimePicker / DatePicker 新增 `valueFormat`（#177）
+* 同步 Skeleton 组件（#171）
+* 文档站支持自定义主题（#166、#178）
+* Avatar 与 AvatarGroup 新增单元测试（#126）
+
+**🐞 问题修复 Fixes**
+
+* 修复 trigger 点击无法关闭的问题（#134）
+* 修复 Modal 在 info/success/warning 模式下取消按钮隐藏（#167）
+* 修复 TreeSelect 多选 Checkbox 样式问题（#169）
+* 修复 Progress 动画溢出问题（#173）
+* 修复 Layout Sider 响应式折叠逻辑（#158、#155）
+* 修复 eslint 配置类型错误（#142）
+* 修复变量引用错误（#180）
+
+
+**🧪 单元测试 Tests**
+
+本版本大幅补充组件测试与语义 DOM 测试，包括：
+
+Avatar、Badge、Breadcrumb、Button、Calendar、Divider、Empty、Flex、Input、InputNumber、Layout、QRCode、Rate、Result、Segmented、Space、Switch、Transfer、Tree、TreeSelect 等组件。
+
+相关 PR：#128、#130、#136、#137、#140、#143、#145、#147、#148、#151、#154、#156、#159、#160、#161、#162、#172、#175、#176
+
+
+**📝 文档更新 Documentation**
+
+* 修复 DatePicker、Select、Upload、Drawer、Image、Anchor、Pagination 等 API 文档格式问题
+* 更新 Layout 文档中 breakpoint 与 collapse 回调类型
+* 修复 Grid 文档语法
+* 修复 FloatButton API 示例
+* 更新 Button 文档链接
+
+相关 PR：#131、#132、#133、#135、#138、#139、#144、#146、#150、#153、#164、#181
+
+---
+
+**👏 新贡献者 New Contributors**
+
+感谢以下社区贡献者的首次参与：
+
+* @Darkingtail
+* @shiqkuangsan
+* @wujighostking
+* @rookie-orange
+
+
+**Full Changelog**
+https://github.com/antdv-next/antdv-next/compare/antdv-next@1.0.2...antdv-next@1.0.3
+
+
 ## V1.0.2
 
 **新功能**
